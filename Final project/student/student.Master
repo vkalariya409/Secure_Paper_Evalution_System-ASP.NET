@@ -1,0 +1,239 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="student.master.cs" Inherits="Final_project.student.student" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <!DOCTYPE html>
+                <html lang="en" data-bs-theme="light">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Student Dashboard - SecurePaper</title>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+                    <link rel="stylesheet" href="../assets/css/style.css">
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                </head>
+                <body>
+
+                    <div class="sp-app-layout">
+
+                        <aside class="sp-sidebar">
+                            <div class="sp-sidebar-brand">
+                                <div class="sp-brand-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                                <span>SecurePaper</span>
+                            </div>
+
+                            <div class="sp-sidebar-menu">
+                                <div class="sp-sidebar-header">Student Menu</div>
+                                <div class="sp-nav-item"><a href="dashboard.aspx" class="sp-nav-link active"><i class="bi bi-speedometer2"></i>Dashboard</a></div>
+                                <div class="sp-nav-item"><a href="subjects.aspx" class="sp-nav-link"><i class="bi bi-journal-bookmark"></i>Subjects</a></div>
+
+                                <div class="sp-sidebar-header">Exams & Submissions</div>
+                                <div class="sp-nav-item"><a href="quiz.aspx" class="sp-nav-link"><i class="bi bi-patch-question"></i>Online Quiz</a></div>
+                                <div class="sp-nav-item"><a href="theory-exam.aspx" class="sp-nav-link"><i class="bi bi-file-earmark-pdf"></i>Theory Exam</a></div>
+                                <div class="sp-nav-item"><a href="practical.aspx" class="sp-nav-link"><i class="bi bi-code-square"></i>Practical Submission</a></div>
+                                <div class="sp-nav-item"><a href="assignments.aspx" class="sp-nav-link"><i class="bi bi-journal-check"></i>Assignments</a></div>
+
+                                <div class="sp-sidebar-header">Academics & Reports</div>
+                                <div class="sp-nav-item"><a href="attendance.aspx" class="sp-nav-link"><i class="bi bi-calendar-check"></i>Attendance</a></div>
+                                <div class="sp-nav-item"><a href="results.aspx" class="sp-nav-link"><i class="bi bi-trophy"></i>Results & Marksheets</a></div>
+
+                                <div class="sp-sidebar-header">Account</div>
+                                <div class="sp-nav-item"><a href="notifications.aspx" class="sp-nav-link"><i class="bi bi-bell"></i>Notifications <span class="badge bg-danger rounded-pill ms-auto">2</span></a></div>
+                                <div class="sp-nav-item"><a href="profile.aspx" class="sp-nav-link"><i class="bi bi-person"></i>Profile</a></div>
+                                <div class="sp-nav-item"><a href="settings.aspx" class="sp-nav-link"><i class="bi bi-gear"></i>Settings</a></div>
+                            </div>
+
+                            <div class="sp-sidebar-footer">
+                                <a href="../login-selection.aspx" class="sp-nav-link text-danger"><i class="bi bi-box-arrow-right"></i>Logout</a>
+                            </div>
+                        </aside>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                <div class="sp-main-wrapper">
+                    <header class="sp-navbar">
+                        <div class="d-flex align-items-center gap-3">
+                            <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
+                            <div class="sp-nav-search"><i class="bi bi-search"></i>
+                                <input type="text" placeholder="Search subjects, notes, quizzes..."></div>
+                        </div>
+
+                        <div class="sp-navbar-right">
+                            <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
+                            <div class="sp-user-profile">
+                                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Student" class="sp-avatar">
+                                <div class="sp-user-info d-none d-md-block">
+                                    <span class="sp-user-name">Alex Rivera</span>
+                                    <span class="sp-user-role">BCA - Sem 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                <div class="sp-page-header">
+                    <div>
+                        <h1 class="sp-page-title">Student Overview</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Student</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="quiz.html" class="btn btn-sp-primary"><i class="bi bi-play-circle-fill me-1"></i>Start Active Quiz</a>
+                    </div>
+                </div>
+
+                <div class="sp-content">
+
+                    <!-- Student Dashboard Cards Grid (8 Cards) -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon danger"><i class="bi bi-alarm-fill"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>2</h3>
+                                    <p>Upcoming Exams</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon warning"><i class="bi bi-file-earmark-text-fill"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>3</h3>
+                                    <p>Pending Assignments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon primary"><i class="bi bi-journal-text"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>18</h3>
+                                    <p>Available Notes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon info"><i class="bi bi-code-square"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>5</h3>
+                                    <p>Practical Files</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon secondary"><i class="bi bi-patch-question-fill"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>4</h3>
+                                    <p>Quiz Count</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon success"><i class="bi bi-calendar-check-fill"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>92%</h3>
+                                    <p>Attendance Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon primary"><i class="bi bi-award-fill"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>3.85</h3>
+                                    <p>Cumulative GPA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-icon danger"><i class="bi bi-bell-fill"></i></div>
+                                <div class="sp-stat-details">
+                                    <h3>2</h3>
+                                    <p>Notifications</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Action Grid -->
+                    <div class="row g-4 mb-4">
+                        <!-- Live Active Exams -->
+                        <div class="col-lg-8">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <span><i class="bi bi-controller text-primary me-2"></i>Ready for Attempt</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card p-3 mb-3 border border-primary-subtle bg-primary-subtle">
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                            <div>
+                                                <span class="badge bg-primary mb-1">Live Online Quiz</span>
+                                                <h5 class="fw-bold text-primary mb-1">ASP.NET Mid-Term Online Quiz</h5>
+                                                <p class="text-muted small mb-0">Course: BCA-201 | Duration: 15 Mins | Total Questions: 20</p>
+                                            </div>
+                                            <a href="quiz.html" class="btn btn-sp-primary px-4 fw-bold">Attempt Now &rarr;</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="card p-3 border border-secondary-subtle">
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                            <div>
+                                                <span class="badge bg-secondary mb-1">Theory Paper</span>
+                                                <h5 class="fw-bold mb-1">C# Object Oriented Theory Exam</h5>
+                                                <p class="text-muted small mb-0">Course: BCA-202 | Available: Aug 05, 10:00 AM</p>
+                                            </div>
+                                            <a href="theory-exam.html" class="btn btn-sp-outline px-4">View Exam Paper</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Attendance Chart -->
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <span><i class="bi bi-pie-chart-fill text-success me-2"></i>Attendance Percentage</span>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="studentAttendanceChart" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/charts.js"></script>
+</body>
+</html>
+</asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
