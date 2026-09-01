@@ -7,7 +7,7 @@
         <h1 class="sp-page-title">Student Profile</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
             <li class="breadcrumb-item active">Profile</li>
           </ol>
         </nav>

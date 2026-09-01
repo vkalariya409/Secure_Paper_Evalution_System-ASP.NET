@@ -7,7 +7,7 @@
         <h1 class="sp-page-title">My Subjects & Study Material</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
             <li class="breadcrumb-item active">Subjects</li>
           </ol>
         </nav>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="d-flex justify-content-between mb-1">
                   <span><i class="bi bi-file-earmark-code-fill text-info me-1"></i> Practical Files: 2 Assignments</span>
-                  <a href="practical.html" class="text-primary">Submit</a>
+                  <a href="practical.aspx" class="text-primary">Submit</a>
                 </div>
                 <div class="d-flex justify-content-between">
                   <span><i class="bi bi-megaphone-fill text-danger me-1"></i> Announcement: Mid-Term Quiz Active</span>
@@ -45,9 +45,9 @@
 
               <!-- Required Spec Buttons -->
               <div class="d-flex flex-wrap gap-2">
-                <a href="quiz.html" class="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</a>
-                <a href="theory-exam.html" class="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</a>
-                <a href="practical.html" class="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</a>
+                <a href="quiz.aspx" class="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</a>
+                <a href="theory-exam.aspx" class="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</a>
+                <a href="practical.aspx" class="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</a>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="d-flex justify-content-between mb-1">
                   <span><i class="bi bi-file-earmark-code-fill text-info me-1"></i> Practical Files: 3 Assignments</span>
-                  <a href="practical.html" class="text-primary">Submit</a>
+                  <a href="practical.aspx" class="text-primary">Submit</a>
                 </div>
                 <div class="d-flex justify-content-between">
                   <span><i class="bi bi-megaphone-fill text-danger me-1"></i> Announcement: Theory Exam Aug 05</span>
@@ -80,9 +80,9 @@
               </div>
 
               <div class="d-flex flex-wrap gap-2">
-                <a href="quiz.html" class="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</a>
-                <a href="theory-exam.html" class="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</a>
-                <a href="practical.html" class="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</a>
+                <a href="quiz.aspx" class="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</a>
+                <a href="theory-exam.aspx" class="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</a>
+                <a href="practical.aspx" class="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</a>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@
   <!-- Landing Top Navbar -->
         <nav class="navbar navbar-expand-lg sticky-top sp-navbar">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.aspx">
                 <div class="sp-brand-icon">
                     <i class="bi bi-shield-lock-fill"></i>
                 </div>
@@ -58,7 +58,7 @@
   <div class="container py-5 flex-grow-1">
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house me-1"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="index.aspx"><i class="bi bi-house me-1"></i> Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">About Us</li>
       </ol>
     </nav>
@@ -154,21 +154,21 @@
                 <div class="col-6 col-lg-2">
                     <h6 class="sp-footer-col-title">Platform</h6>
                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a href="index.html">Home Overview</a></li>
-                        <li><a href="about.html">About System</a></li>
+                        <li><a href="index.aspx">Home Overview</a></li>
+                        <li><a href="about.aspx">About System</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#departments">Departments</a></li>
                         <li><a href="#faculty">Faculty Directory</a></li>
-                        <li><a href="faq.html">System FAQ</a></li>
+                        <li><a href="faq.aspx">System FAQ</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h6 class="sp-footer-col-title">Portals</h6>
                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a href="faculty/login.html">Faculty Portal</a></li>
-                        <li><a href="student/login.html">Student Portal</a></li>
-                        <li><a href="evaluator/login.html">Evaluator Portal</a></li>
-                        <li><a href="admin/login.html">Admin Portal</a></li>
+                        <li><a href="faculty/login.aspx">Faculty Portal</a></li>
+                        <li><a href="student/login.aspx">Student Portal</a></li>
+                        <li><a href="evaluator/login.aspx">Evaluator Portal</a></li>
+                        <li><a href="admin/login.aspx">Admin Portal</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">

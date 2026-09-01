@@ -7,7 +7,7 @@
         <h1 class="sp-page-title">My Assignments</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
             <li class="breadcrumb-item active">Assignments</li>
           </ol>
         </nav>
@@ -44,7 +44,7 @@
                   <td>Aug 10, 2026</td>
                   <td><span class="badge badge-sp warning">Pending</span></td>
                   <td>-</td>
-                  <td><a href="practical.html" class="btn btn-sm btn-sp-primary">Upload File</a></td>
+                  <td><a href="practical.aspx" class="btn btn-sm btn-sp-primary">Upload File</a></td>
                 </tr>
               </tbody>
             </table>

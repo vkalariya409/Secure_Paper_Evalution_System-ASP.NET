@@ -64,7 +64,7 @@
                         SecurePaper unifies faculty, students, evaluators and administrators on one premium ERP platform — quizzes, theory papers, practicals, evaluations, results and analytics in a single secure workspace.
                     </p>
                     <div class="d-flex flex-wrap gap-3 mb-4">
-                        <a href="login-selection.html" class="btn btn-sp-primary btn-lg"><i class="bi bi-rocket-takeoff-fill"></i>Get Started </a><a href="#features" class="btn btn-sp-secondary btn-lg"><i class="bi bi-compass"></i>Explore Features </a>
+                        <a href="login-selection.aspx" class="btn btn-sp-primary btn-lg"><i class="bi bi-rocket-takeoff-fill"></i>Get Started </a><a href="#features" class="btn btn-sp-secondary btn-lg"><i class="bi bi-compass"></i>Explore Features </a>
                     </div>
                     <div class="sp-hero-stats">
                         <div class="sp-stat-item">
@@ -520,10 +520,10 @@
                 <div class="col-6 col-lg-2">
                     <h6 class="sp-footer-col-title">Portals</h6>
                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a href="faculty/login.html">Faculty Portal</a></li>
-                        <li><a href="student/login.html">Student Portal</a></li>
-                        <li><a href="evaluator/login.html">Evaluator Portal</a></li>
-                        <li><a href="admin/login.html">Admin Portal</a></li>
+                        <li><a href="faculty/login.aspx">Faculty Portal</a></li>
+                        <li><a href="student/login.aspx">Student Portal</a></li>
+                        <li><a href="evaluator/login.aspx">Evaluator Portal</a></li>
+                        <li><a href="admin/login.aspx">Admin Portal</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">

@@ -24,7 +24,7 @@
       <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
   <div class="sp-auth-card">
     <div class="sp-auth-header">
-      <a href="../index.html" class="d-inline-flex align-items-center gap-2 mb-2 text-decoration-none">
+      <a href="../index.aspx" class="d-inline-flex align-items-center gap-2 mb-2 text-decoration-none">
         <div class="sp-brand-icon"><i class="bi bi-shield-lock-fill"></i></div>
         <span class="fs-3 fw-extrabold text-dark">Secure<span class="sp-text-gradient">Paper</span></span>
       </a>
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <form action="dashboard.html" method="get">
+    <form action="dashboard.aspx" method="get">
       <div class="mb-3">
         <label class="form-label fw-semibold">Enrollment Number / Email</label>
         <div class="input-group">
@@ -71,11 +71,11 @@
 
     <div class="border-top border-secondary border-opacity-10 my-4 pt-3 text-center">
       <p class="text-muted small mb-2">New Student Enrollment?</p>
-      <a href="register.html" class="btn btn-sp-outline w-100 py-2"><i class="bi bi-person-plus-fill me-1"></i> Register Student Account</a>
+      <a href="register.aspx" class="btn btn-sp-outline w-100 py-2"><i class="bi bi-person-plus-fill me-1"></i> Register Student Account</a>
     </div>
 
     <div class="text-center mt-3">
-      <a href="../login-selection.html" class="text-muted small text-decoration-none"><i class="bi bi-arrow-left me-1"></i> Back to Portal Selection</a>
+      <a href="../login-selection.aspx" class="text-muted small text-decoration-none"><i class="bi bi-arrow-left me-1"></i> Back to Portal Selection</a>
     </div>
   </div>
           </div>

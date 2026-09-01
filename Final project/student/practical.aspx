@@ -8,7 +8,7 @@
         <h1 class="sp-page-title">Practical Project Submission</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
             <li class="breadcrumb-item active">Practical Submission</li>
           </ol>
         </nav>
@@ -35,7 +35,7 @@
 
             <div class="col-md-6">
               <label class="form-label fw-semibold">Upload Individual Source Code Files (.cs, .aspx, .sql)</label>
-              <input type="file" class="form-control" accept=".cs,.aspx,.sql,.html,.css" multiple>
+              <input type="file" class="form-control" accept=".cs,.aspx,.sql,.aspx,.css" multiple>
             </div>
 
             <div class="col-md-6">

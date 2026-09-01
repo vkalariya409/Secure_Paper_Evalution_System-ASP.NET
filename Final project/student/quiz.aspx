@@ -23,7 +23,7 @@
   <header class="navbar bg-white border-bottom sticky-top py-2 px-4">
     <div class="container-fluid d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-3">
-        <a href="dashboard.html" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left"></i> Exit Test</a>
+        <a href="dashboard.aspx" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left"></i> Exit Test</a>
         <h5 class="fw-bold mb-0 text-primary">ASP.NET Mid-Term Online Examination</h5>
       </div>
       
@@ -148,7 +148,7 @@
           </div>
         </div>
 
-        <a href="results.html" class="btn btn-sp-primary py-2.5 fw-bold">View Detailed Marksheet</a>
+        <a href="results.aspx" class="btn btn-sp-primary py-2.5 fw-bold">View Detailed Marksheet</a>
       </div>
     </div>
   </div>
