@@ -19,7 +19,7 @@
         <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
             <div class="sp-auth-card">
                 
-                <!-- Logo & Header -->
+        
                 <div class="sp-auth-header">
                     <a href="../index.aspx" class="d-inline-flex align-items-center gap-2 mb-2 text-decoration-none">
                         <div class="sp-brand-icon"><i class="bi bi-shield-lock-fill"></i></div>
