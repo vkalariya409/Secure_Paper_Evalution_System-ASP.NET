@@ -482,6 +482,7 @@
     </Compile>
     <Compile Include="student\student.Master.cs">
       <DependentUpon>student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="student\student.Master.designer.cs">
       <DependentUpon>student.Master</DependentUpon>
