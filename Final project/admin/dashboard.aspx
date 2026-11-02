@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Final_project.admin.dashboard" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Final_project.admin.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -10,7 +11,8 @@
                 </button>
                 <div class="sp-nav-search">
                     <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search system entities, logs..."></div>
+                    <%-- ASP.NET Search TextBox --%>
+                    <asp:TextBox ID="txtSearch" runat="server" placeholder="Search system entities, logs..."></asp:TextBox></div>
             </div>
             <div class="sp-navbar-right">
                 <button class="sp-icon-btn sp-theme-toggle">
@@ -167,4 +169,3 @@
  </asp:Content>
 <asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder1">
 </asp:Content>
-

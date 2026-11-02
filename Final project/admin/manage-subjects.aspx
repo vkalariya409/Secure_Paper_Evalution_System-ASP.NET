@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="manage-subjects.aspx.cs" Inherits="Final_project.admin.manage_subjects" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="manage-subjects.aspx.cs" Inherits="Final_project.admin.manage_subjects" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -8,11 +9,22 @@
   <div class="sp-main-wrapper">
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
-        <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search subject..."></div>
+
+        <%-- ASP.NET Sidebar Toggle Button --%>
+        <asp:Button ID="btnSidebarToggle" runat="server" Text="☰" CssClass="btn btn-sm btn-light d-lg-none sp-sidebar-toggler" />
+
+        <%-- ASP.NET Search TextBox --%>
+        <div class="sp-nav-search">
+          <i class="bi bi-search"></i>
+          <asp:TextBox ID="txtSearchSubject" runat="server" placeholder="Search subject..."></asp:TextBox>
+        </div>
       </div>
+
       <div class="sp-navbar-right">
-        <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
+
+        <%-- ASP.NET Theme Toggle Button --%>
+        <asp:Button ID="btnThemeToggle" runat="server" Text="☾" CssClass="sp-icon-btn sp-theme-toggle" />
+
         <div class="sp-user-profile">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="sp-avatar">
           <span class="sp-user-name d-none d-md-inline">Dr. Arthur Pendelton</span>
@@ -30,7 +42,9 @@
           </ol>
         </nav>
       </div>
-      <button class="btn btn-danger fw-bold" onclick="alert('Add Subject Modal Opened!')"><i class="bi bi-plus-lg me-1"></i> Create Subject</button>
+
+      <%-- ASP.NET Create Subject Button --%>
+      <asp:Button ID="btnCreateSubject" runat="server" Text="Create Subject" CssClass="btn btn-danger fw-bold" />
     </div>
 
     <div class="sp-content">
@@ -56,8 +70,11 @@
                   <td>Semester 3</td>
                   <td>Dr. Sarah Jenkins</td>
                   <td>
-                    <button class="btn btn-sm btn-sp-outline me-1"><i class="bi bi-pencil"></i> Edit</button>
-                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    <%-- ASP.NET Edit Button --%>
+                    <asp:Button ID="btnEditSubject1" runat="server" Text="Edit" CssClass="btn btn-sm btn-sp-outline me-1" />
+
+                    <%-- ASP.NET Delete Button --%>
+                    <asp:Button ID="btnDeleteSubject1" runat="server" Text="Delete" CssClass="btn btn-sm btn-outline-danger" />
                   </td>
                 </tr>
 
@@ -68,8 +85,11 @@
                   <td>Semester 3</td>
                   <td>Prof. Alan Turing</td>
                   <td>
-                    <button class="btn btn-sm btn-sp-outline me-1"><i class="bi bi-pencil"></i> Edit</button>
-                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    <%-- ASP.NET Edit Button --%>
+                    <asp:Button ID="btnEditSubject2" runat="server" Text="Edit" CssClass="btn btn-sm btn-sp-outline me-1" />
+
+                    <%-- ASP.NET Delete Button --%>
+                    <asp:Button ID="btnDeleteSubject2" runat="server" Text="Delete" CssClass="btn btn-sm btn-outline-danger" />
                   </td>
                 </tr>
               </tbody>
@@ -87,5 +107,4 @@
 </body>
 </html>
 
- </asp:Content>
-
+</asp:Content>

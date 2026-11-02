@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="logs.aspx.cs" Inherits="Final_project.admin.logs" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="logs.aspx.cs" Inherits="Final_project.admin.logs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -8,11 +9,22 @@
   <div class="sp-main-wrapper">
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
-        <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search logs..."></div>
+
+        <%-- ASP.NET Sidebar Toggle Button --%>
+        <asp:Button ID="btnSidebarToggle" runat="server" Text="☰" CssClass="btn btn-sm btn-light d-lg-none sp-sidebar-toggler" />
+
+        <%-- ASP.NET Search TextBox --%>
+        <div class="sp-nav-search">
+          <i class="bi bi-search"></i>
+          <asp:TextBox ID="txtSearchLogs" runat="server" placeholder="Search logs..."></asp:TextBox>
+        </div>
       </div>
+
       <div class="sp-navbar-right">
-        <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
+
+        <%-- ASP.NET Theme Toggle Button --%>
+        <asp:Button ID="btnThemeToggle" runat="server" Text="☾" CssClass="sp-icon-btn sp-theme-toggle" />
+
         <div class="sp-user-profile">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="sp-avatar">
           <span class="sp-user-name d-none d-md-inline">Dr. Arthur Pendelton</span>
@@ -30,7 +42,9 @@
           </ol>
         </nav>
       </div>
-      <button class="btn btn-sp-outline" onclick="alert('Exporting Security Audit Log CSV...')"><i class="bi bi-download me-1"></i> Export Logs</button>
+
+      <%-- ASP.NET Export Logs Button --%>
+      <asp:Button ID="btnExportLogs" runat="server" Text="Export Logs" CssClass="btn btn-sp-outline" />
     </div>
 
     <div class="sp-content">
@@ -91,5 +105,4 @@
 </body>
 </html>
 
- </asp:Content>
-
+</asp:Content>

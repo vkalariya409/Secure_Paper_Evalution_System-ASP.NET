@@ -24,6 +24,15 @@ namespace Final_project.admin
         protected global::System.Web.UI.WebControls.TextBox txtSearchDepartment;
 
         /// <summary>
+        /// btnAddDepartment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddDepartment;
+
+        /// <summary>
         /// btnEditBCA control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,42 @@ namespace Final_project.admin
         protected global::System.Web.UI.WebControls.Button btnDeleteMCA;
 
         /// <summary>
+        /// btnEditBBA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditBBA;
+
+        /// <summary>
+        /// btnDeleteBBA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteBBA;
+
+        /// <summary>
+        /// btnEditMBA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditMBA;
+
+        /// <summary>
+        /// btnDeleteMBA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteMBA;
+
+        /// <summary>
         /// btnEditBTech control.
         /// </summary>
         /// <remarks>
@@ -76,6 +121,24 @@ namespace Final_project.admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDeleteBTech;
+
+        /// <summary>
+        /// btnEditPharmacy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditPharmacy;
+
+        /// <summary>
+        /// btnDeletePharmacy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeletePharmacy;
 
         /// <summary>
         /// btnEditNursing control.
