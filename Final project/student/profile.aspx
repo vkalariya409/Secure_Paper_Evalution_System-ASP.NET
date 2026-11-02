@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="Final_project.student.profile" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="Final_project.student.profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -28,37 +29,52 @@
         <div class="col-md-8">
           <div class="card p-4">
             <h5 class="fw-bold mb-3"><i class="bi bi-person-badge-fill text-success me-2"></i> Student Details</h5>
-            <form onsubmit="event.preventDefault(); alert('Profile updated!');">
+
+            <%-- ASP.NET Panel replaces the inner HTML form --%>
+            <asp:Panel ID="pnlProfile" runat="server">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Full Name</label>
-                  <input type="text" class="form-control" value="Alex Rivera">
+                  <%-- ASP.NET Label --%>
+                  <asp:Label ID="lblFullName" runat="server" CssClass="form-label fw-semibold" Text="Full Name"></asp:Label>
+                  <%-- ASP.NET TextBox --%>
+                  <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control" Text="Alex Rivera"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Enrollment Number</label>
-                  <input type="text" class="form-control" value="ENR-2024-001" readonly>
+                  <%-- ASP.NET Label --%>
+                  <asp:Label ID="lblEnrollment" runat="server" CssClass="form-label fw-semibold" Text="Enrollment Number"></asp:Label>
+                  <%-- ASP.NET ReadOnly TextBox --%>
+                  <asp:TextBox ID="txtEnrollment" runat="server" CssClass="form-control" Text="ENR-2024-001" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Department</label>
-                  <input type="text" class="form-control" value="BCA" readonly>
+                  <%-- ASP.NET Label --%>
+                  <asp:Label ID="lblDepartment" runat="server" CssClass="form-label fw-semibold" Text="Department"></asp:Label>
+                  <%-- ASP.NET ReadOnly TextBox --%>
+                  <asp:TextBox ID="txtDepartment" runat="server" CssClass="form-control" Text="BCA" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Batch</label>
-                  <input type="text" class="form-control" value="2024-2027" readonly>
+                  <%-- ASP.NET Label --%>
+                  <asp:Label ID="lblBatch" runat="server" CssClass="form-label fw-semibold" Text="Batch"></asp:Label>
+                  <%-- ASP.NET ReadOnly TextBox --%>
+                  <asp:TextBox ID="txtBatch" runat="server" CssClass="form-control" Text="2024-2027" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Phone Number</label>
-                  <input type="tel" class="form-control" value="+1 (555) 019-2834">
+                  <%-- ASP.NET Label --%>
+                  <asp:Label ID="lblPhone" runat="server" CssClass="form-label fw-semibold" Text="Phone Number"></asp:Label>
+                  <%-- ASP.NET Phone TextBox --%>
+                  <asp:TextBox ID="txtPhone" runat="server" TextMode="Phone" CssClass="form-control" Text="+1 (555) 019-2834"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label fw-semibold">Student Email</label>
-                  <input type="email" class="form-control" value="alex.rivera@student.univ.edu">
+                  <%-- ASP.NET Label --%>
+                  <asp:Label ID="lblEmail" runat="server" CssClass="form-label fw-semibold" Text="Student Email"></asp:Label>
+                  <%-- ASP.NET Email TextBox --%>
+                  <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control" Text="alex.rivera@student.univ.edu"></asp:TextBox>
                 </div>
                 <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-sp-secondary px-4">Update Profile</button>
+                  <%-- ASP.NET Update Profile Button --%>
+                  <asp:Button ID="btnUpdateProfile" runat="server" Text="Update Profile" CssClass="btn btn-sp-secondary px-4" />
                 </div>
               </div>
-            </form>
+            </asp:Panel>
           </div>
         </div>
       </div>
@@ -72,4 +88,3 @@
 </body>
 </html>
 </asp:Content>
-

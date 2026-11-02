@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="subjects.aspx.cs" Inherits="Final_project.student.subjects" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="subjects.aspx.cs" Inherits="Final_project.student.subjects" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
        <div class="sp-page-header">
       <div>
         <h1 class="sp-page-title">My Subjects & Study Material</h1>
@@ -31,11 +32,13 @@
               <div class="p-3 bg-light rounded-3 mb-3 small">
                 <div class="d-flex justify-content-between mb-1">
                   <span><i class="bi bi-folder-fill text-warning me-1"></i> Study Material: 4 PDFs</span>
-                  <a href="#" class="text-primary" onclick="alert('Downloading Study Material PDF...')">Download</a>
+                  <%-- ASP.NET HyperLink for Download Study Material --%>
+                  <asp:HyperLink ID="lnkDownloadMaterial1" runat="server" NavigateUrl="#" CssClass="text-primary" OnClientClick="alert('Downloading Study Material PDF...'); return false;">Download</asp:HyperLink>
                 </div>
                 <div class="d-flex justify-content-between mb-1">
                   <span><i class="bi bi-file-earmark-code-fill text-info me-1"></i> Practical Files: 2 Assignments</span>
-                  <a href="practical.aspx" class="text-primary">Submit</a>
+                  <%-- ASP.NET HyperLink for Submit Practical --%>
+                  <asp:HyperLink ID="lnkSubmitPractical1" runat="server" NavigateUrl="practical.aspx" CssClass="text-primary">Submit</asp:HyperLink>
                 </div>
                 <div class="d-flex justify-content-between">
                   <span><i class="bi bi-megaphone-fill text-danger me-1"></i> Announcement: Mid-Term Quiz Active</span>
@@ -45,9 +48,12 @@
 
               <!-- Required Spec Buttons -->
               <div class="d-flex flex-wrap gap-2">
-                <a href="quiz.aspx" class="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</a>
-                <a href="theory-exam.aspx" class="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</a>
-                <a href="practical.aspx" class="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</a>
+                <%-- ASP.NET HyperLink for Quiz Button --%>
+                <asp:HyperLink ID="lnkQuiz1" runat="server" NavigateUrl="quiz.aspx" CssClass="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</asp:HyperLink>
+                <%-- ASP.NET HyperLink for Theory Paper Button --%>
+                <asp:HyperLink ID="lnkTheoryPaper1" runat="server" NavigateUrl="theory-exam.aspx" CssClass="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</asp:HyperLink>
+                <%-- ASP.NET HyperLink for Practical Submission Button --%>
+                <asp:HyperLink ID="lnkPractical1" runat="server" NavigateUrl="practical.aspx" CssClass="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</asp:HyperLink>
               </div>
             </div>
           </div>
@@ -67,11 +73,13 @@
               <div class="p-3 bg-light rounded-3 mb-3 small">
                 <div class="d-flex justify-content-between mb-1">
                   <span><i class="bi bi-folder-fill text-warning me-1"></i> Study Material: 6 PDFs</span>
-                  <a href="#" class="text-primary" onclick="alert('Downloading Study Material PDF...')">Download</a>
+                  <%-- ASP.NET HyperLink for Download Study Material --%>
+                  <asp:HyperLink ID="lnkDownloadMaterial2" runat="server" NavigateUrl="#" CssClass="text-primary" OnClientClick="alert('Downloading Study Material PDF...'); return false;">Download</asp:HyperLink>
                 </div>
                 <div class="d-flex justify-content-between mb-1">
                   <span><i class="bi bi-file-earmark-code-fill text-info me-1"></i> Practical Files: 3 Assignments</span>
-                  <a href="practical.aspx" class="text-primary">Submit</a>
+                  <%-- ASP.NET HyperLink for Submit Practical --%>
+                  <asp:HyperLink ID="lnkSubmitPractical2" runat="server" NavigateUrl="practical.aspx" CssClass="text-primary">Submit</asp:HyperLink>
                 </div>
                 <div class="d-flex justify-content-between">
                   <span><i class="bi bi-megaphone-fill text-danger me-1"></i> Announcement: Theory Exam Aug 05</span>
@@ -80,9 +88,12 @@
               </div>
 
               <div class="d-flex flex-wrap gap-2">
-                <a href="quiz.aspx" class="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</a>
-                <a href="theory-exam.aspx" class="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</a>
-                <a href="practical.aspx" class="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</a>
+                <%-- ASP.NET HyperLink for Quiz Button --%>
+                <asp:HyperLink ID="lnkQuiz2" runat="server" NavigateUrl="quiz.aspx" CssClass="btn btn-sm btn-sp-primary"><i class="bi bi-patch-question me-1"></i> Quiz Button</asp:HyperLink>
+                <%-- ASP.NET HyperLink for Theory Paper Button --%>
+                <asp:HyperLink ID="lnkTheoryPaper2" runat="server" NavigateUrl="theory-exam.aspx" CssClass="btn btn-sm btn-sp-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Theory Paper Button</asp:HyperLink>
+                <%-- ASP.NET HyperLink for Practical Submission Button --%>
+                <asp:HyperLink ID="lnkPractical2" runat="server" NavigateUrl="practical.aspx" CssClass="btn btn-sm btn-sp-outline"><i class="bi bi-code-slash me-1"></i> Practical Submission Button</asp:HyperLink>
               </div>
             </div>
           </div>
@@ -99,4 +110,3 @@
 </body>
 </html>
 </asp:Content>
-

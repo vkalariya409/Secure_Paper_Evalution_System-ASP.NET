@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="theory-exam.aspx.cs" Inherits="Final_project.student.theory_exam" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="theory-exam.aspx.cs" Inherits="Final_project.student.theory_exam" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
 
     <div class="sp-page-header">
       <div>
@@ -49,23 +50,33 @@
         <div class="col-lg-5">
           <div class="card p-4 h-100">
             <h5 class="fw-bold mb-3"><i class="bi bi-cloud-arrow-up-fill text-primary me-2"></i> Answer Sheet Submission</h5>
-            <form onsubmit="event.preventDefault(); alert('Theory Answer Sheet submitted successfully!');">
+
+            <%-- ASP.NET Panel instead of HTML Form --%>
+            <asp:Panel ID="pnlAnswerSubmission" runat="server">
               <div class="mb-3">
-                <label class="form-label fw-semibold">Upload Answer PDF / DOC</label>
-                <input type="file" class="form-control" accept=".pdf,.doc,.docx" required>
+                <%-- ASP.NET Label --%>
+                <asp:Label ID="lblAnswerFile" runat="server" Text="Upload Answer PDF / DOC" CssClass="form-label fw-semibold"></asp:Label>
+
+                <%-- ASP.NET FileUpload --%>
+                <asp:FileUpload ID="fuAnswerFile" runat="server" CssClass="form-control" accept=".pdf,.doc,.docx" />
                 <div class="form-text small">Accepted Formats: PDF, DOC, DOCX (Max 25MB)</div>
               </div>
 
               <div class="mb-3">
-                <label class="form-label fw-semibold">Student Notes / Comments</label>
-                <textarea class="form-control" rows="3" placeholder="Enter optional notes for the evaluator..."></textarea>
+                <%-- ASP.NET Label --%>
+                <asp:Label ID="lblStudentNotes" runat="server" Text="Student Notes / Comments" CssClass="form-label fw-semibold"></asp:Label>
+
+                <%-- ASP.NET Multiline TextBox --%>
+                <asp:TextBox ID="txtStudentNotes" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control" placeholder="Enter optional notes for the evaluator..."></asp:TextBox>
               </div>
 
               <div class="d-grid gap-2 mt-4">
                 <button type="button" class="btn btn-sp-outline" onclick="alert('Previewing uploaded answer file...')"><i class="bi bi-eye"></i> Preview Upload</button>
-                <button type="submit" class="btn btn-sp-primary py-2.5 fw-bold"><i class="bi bi-check-circle-fill me-2"></i> Submit Theory Answer Sheet</button>
+
+                <%-- ASP.NET Submit Button --%>
+                <asp:Button ID="btnSubmitTheory" runat="server" Text="Submit Theory Answer Sheet" CssClass="btn btn-sp-primary py-2.5 fw-bold" />
               </div>
-            </form>
+            </asp:Panel>
           </div>
         </div>
 
@@ -77,8 +88,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/main.js"></script>
-</body>
-</html>
-
 </asp:Content>
-

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Final_project.student.login" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Final_project.student.login" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -56,7 +57,8 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-text bg-body-tertiary border-end-0"><i class="bi bi-lock-fill text-muted"></i></span>
-                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control border-start-0 py-2" Value="••••••••" Required="true" />
+                        <%-- ASP.NET Password TextBox --%>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control border-start-0 py-2" Required="true" />
                     </div>
                 </div>
 
@@ -67,9 +69,8 @@
                 </div>
 
                 <!-- Login Button -->
-                <button type="submit" id="btnLogin" runat="server" class="btn btn-sp-primary w-100 py-2.5 fs-6">
-                    Log In to Student Dashboard <i class="bi bi-arrow-right ms-1"></i>
-                </button>
+                <%-- ASP.NET Login Button --%>
+                <asp:Button ID="btnLogin" runat="server" Text="Log In to Student Dashboard" CssClass="btn btn-sp-primary w-100 py-2.5 fs-6" />
 
                 <!-- Register Link -->
                 <div class="border-top border-secondary border-opacity-10 my-4 pt-3 text-center">

@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="results.aspx.cs" Inherits="Final_project.student.results" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="results.aspx.cs" Inherits="Final_project.student.results" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
     
     <div class="sp-page-header">
       <div>
@@ -16,12 +17,11 @@
 
       <!-- Required Spec Action Buttons: Download & Print -->
       <div class="d-flex gap-2">
-        <button class="btn btn-sp-secondary" onclick="alert('Downloading Marksheet PDF document...')">
-          <i class="bi bi-file-earmark-arrow-down-fill me-1"></i> Download Result
-        </button>
-        <button class="btn btn-sp-outline" onclick="window.print()">
-          <i class="bi bi-printer-fill me-1"></i> Print Marksheet
-        </button>
+        <%-- ASP.NET Download Result Button --%>
+        <asp:Button ID="btnDownloadResult" runat="server" Text="Download Result" CssClass="btn btn-sp-secondary" OnClientClick="alert('Downloading Marksheet PDF document...'); return false;" />
+
+        <%-- ASP.NET Print Marksheet Button --%>
+        <asp:Button ID="btnPrintMarksheet" runat="server" Text="Print Marksheet" CssClass="btn btn-sp-outline" OnClientClick="window.print(); return false;" />
       </div>
     </div>
 
@@ -108,7 +108,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/main.js"></script>
-</body>
-</html>
 </asp:Content>
-

@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Final_project.student.dashboard" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Final_project.student.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
     <div class="sp-page-header">
         <div>
             <h1 class="sp-page-title">Student Overview</h1>
@@ -14,7 +15,8 @@
             </nav>
         </div>
         <div class="d-flex gap-2">
-            <a href="quiz.aspx" class="btn btn-sp-primary"><i class="bi bi-play-circle-fill me-1"></i>Start Active Quiz</a>
+            <%-- ASP.NET HyperLink for Start Active Quiz --%>
+            <asp:HyperLink ID="lnkStartActiveQuiz" runat="server" NavigateUrl="quiz.aspx" CssClass="btn btn-sp-primary"><i class="bi bi-play-circle-fill me-1"></i>Start Active Quiz</asp:HyperLink>
         </div>
     </div>
     <div class="sp-content">
@@ -136,7 +138,8 @@
                                                 <p class="text-muted small mb-0">
                                                     Course: BCA-201 | Duration: 15 Mins | Total Questions: 20</p>
                                             </div>
-                                            <a href="quiz.aspx" class="btn btn-sp-primary px-4 fw-bold">Attempt Now &rarr;</a>
+                                            <%-- ASP.NET HyperLink for Attempt Now --%>
+                                            <asp:HyperLink ID="lnkAttemptNow" runat="server" NavigateUrl="quiz.aspx" CssClass="btn btn-sp-primary px-4 fw-bold">Attempt Now &rarr;</asp:HyperLink>
                                         </div>
                                     </div>
                                     <div class="card p-3 border border-secondary-subtle">
@@ -147,7 +150,8 @@
                                                 <p class="text-muted small mb-0">
                                                     Course: BCA-202 | Available: Aug 05, 10:00 AM</p>
                                             </div>
-                                            <a href="theory-exam.aspx" class="btn btn-sp-outline px-4">View Exam Paper</a>
+                                            <%-- ASP.NET HyperLink for View Exam Paper --%>
+                                            <asp:HyperLink ID="lnkViewExamPaper" runat="server" NavigateUrl="theory-exam.aspx" CssClass="btn btn-sp-outline px-4">View Exam Paper</asp:HyperLink>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +177,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="../assets/js/main.js"></script>
         <script src="../assets/js/charts.js"></script>
-</body>
-</html>
 </asp:Content>
-

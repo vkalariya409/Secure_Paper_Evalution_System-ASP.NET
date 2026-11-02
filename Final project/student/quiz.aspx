@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="quiz.aspx.cs" Inherits="Final_project.student.quiz" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="quiz.aspx.cs" Inherits="Final_project.student.quiz" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
-<asp:Content ID="Content4" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
     
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -69,22 +70,26 @@
 
           <div class="d-grid gap-3">
             <label class="p-3 border rounded-3 d-flex align-items-center gap-3 bg-light cursor-pointer">
-              <input type="radio" name="quizOpt" class="form-check-input fs-5" checked>
+              <%-- ASP.NET RadioButton --%>
+              <asp:RadioButton ID="rdoOptionA" runat="server" GroupName="quizOpt" CssClass="form-check-input fs-5" Checked="true" />
               <div><strong>A.</strong> &lt;%@ Import Namespace="System.Data" %&gt;</div>
             </label>
 
             <label class="p-3 border rounded-3 d-flex align-items-center gap-3 bg-light cursor-pointer">
-              <input type="radio" name="quizOpt" class="form-check-input fs-5">
+              <%-- ASP.NET RadioButton --%>
+              <asp:RadioButton ID="rdoOptionB" runat="server" GroupName="quizOpt" CssClass="form-check-input fs-5" />
               <div><strong>B.</strong> &lt;%@ Register TagPrefix="Sys" %&gt;</div>
             </label>
 
             <label class="p-3 border rounded-3 d-flex align-items-center gap-3 bg-light cursor-pointer">
-              <input type="radio" name="quizOpt" class="form-check-input fs-5">
+              <%-- ASP.NET RadioButton --%>
+              <asp:RadioButton ID="rdoOptionC" runat="server" GroupName="quizOpt" CssClass="form-check-input fs-5" />
               <div><strong>C.</strong> &lt;%@ Assembly Name="System" %&gt;</div>
             </label>
 
             <label class="p-3 border rounded-3 d-flex align-items-center gap-3 bg-light cursor-pointer">
-              <input type="radio" name="quizOpt" class="form-check-input fs-5">
+              <%-- ASP.NET RadioButton --%>
+              <asp:RadioButton ID="rdoOptionD" runat="server" GroupName="quizOpt" CssClass="form-check-input fs-5" />
               <div><strong>D.</strong> &lt;%@ Page Language="C#" %&gt;</div>
             </label>
           </div>
@@ -159,4 +164,3 @@
 </html>
 
 </asp:Content>
-

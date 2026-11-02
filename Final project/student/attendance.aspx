@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="attendance.aspx.cs" Inherits="Final_project.student.attendance" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="attendance.aspx.cs" Inherits="Final_project.student.attendance" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
   
     <div class="sp-page-header">
       <div>
@@ -39,8 +40,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/main.js"></script>
-</body>
-</html>
-
 </asp:Content>
-

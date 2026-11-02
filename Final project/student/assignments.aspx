@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="assignments.aspx.cs" Inherits="Final_project.student.assignments" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/student/student.Master" AutoEventWireup="true" CodeBehind="assignments.aspx.cs" Inherits="Final_project.student.assignments" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
      <div class="sp-page-header">
       <div>
         <h1 class="sp-page-title">My Assignments</h1>
@@ -36,7 +37,10 @@
                   <td>Aug 04, 2026</td>
                   <td><span class="badge badge-sp success">Submitted</span></td>
                   <td><span class="badge bg-success">A (90/100)</span></td>
-                  <td><button class="btn btn-sm btn-sp-outline">View Feedback</button></td>
+                  <td>
+                    <%-- ASP.NET View Feedback Button --%>
+                    <asp:Button ID="btnViewFeedback" runat="server" Text="View Feedback" CssClass="btn btn-sm btn-sp-outline" />
+                  </td>
                 </tr>
                 <tr>
                   <td class="fw-bold">C# Delegates & Event Handling</td>
@@ -58,8 +62,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/main.js"></script>
-</body>
-</html>
-
 </asp:Content>
-
