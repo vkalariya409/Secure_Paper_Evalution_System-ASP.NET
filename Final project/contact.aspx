@@ -65,13 +65,13 @@
       </ol>
     </nav>
 
-    <div class="row g-5">
+    <div class="row g-5 align-items-start">
       <div class="col-lg-5">
         <span class="sp-badge-pill sp-badge-primary mb-2">Examination Cell Support</span>
         <h1 class="fw-extrabold display-6 mb-3">Get in Touch</h1>
         <p class="text-muted mb-4">Have questions regarding exam schedules, portal access, or result verification? Contact the University Controller of Examinations office.</p>
 
-        <div class="sp-feature-card p-4 mb-4">
+        <div class="sp-feature-card p-4 mb-4" style="height: auto !important; min-height: 0 !important; align-self: flex-start;">
           <div class="d-flex align-items-center gap-3 mb-3">
             <div class="sp-icon-square blue mb-0" style="width:42px; height:42px; font-size:1.1rem;"><i class="bi bi-geo-alt-fill"></i></div>
             <div>
@@ -99,38 +99,38 @@
       <div class="col-lg-7">
         <div class="sp-feature-card p-4">
           <h3 class="fw-bold mb-4">Send an Institutional Inquiry</h3>
-          <form onsubmit="event.preventDefault(); alert('Thank you! Your query has been submitted to the Examination Helpdesk.');">
+          <div>
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Your Full Name</label>
-                <input type="text" class="form-control rounded-3 py-2" placeholder="Dr. Jane Smith" required>
+                <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control rounded-3 py-2" placeholder="Dr. Jane Smith" required></asp:TextBox>
               </div>
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Email Address</label>
-                <input type="email" class="form-control rounded-3 py-2" placeholder="jane@university.edu" required>
+                <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control rounded-3 py-2" placeholder="jane@university.edu" required></asp:TextBox>
               </div>
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Role Category</label>
-                <select class="form-select rounded-3 py-2">
-                  <option value="Student">Student</option>
-                  <option value="Faculty">Faculty</option>
-                  <option value="Evaluator">Evaluator</option>
-                  <option value="Administrator">Administrator</option>
-                </select>
+                <asp:DropDownList ID="ddlRole" runat="server" CssClass="form-select rounded-3 py-2">
+                  <asp:ListItem Value="Student">Student</asp:ListItem>
+                  <asp:ListItem Value="Faculty">Faculty</asp:ListItem>
+                  <asp:ListItem Value="Evaluator">Evaluator</asp:ListItem>
+                  <asp:ListItem Value="Administrator">Administrator</asp:ListItem>
+                </asp:DropDownList>
               </div>
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Query Subject</label>
-                <input type="text" class="form-control rounded-3 py-2" placeholder="e.g. Schedule Clarification" required>
+                <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control rounded-3 py-2" placeholder="e.g. Schedule Clarification" required></asp:TextBox>
               </div>
               <div class="col-12">
                 <label class="form-label fw-semibold">Detailed Message</label>
-                <textarea class="form-control rounded-3" rows="4" placeholder="Describe your question or technical issue..." required></textarea>
+                <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Rows="4" CssClass="form-control rounded-3" placeholder="Describe your question or technical issue..." required></asp:TextBox>
               </div>
               <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-sp-primary w-100 py-3"><i class="bi bi-send-fill me-1"></i> Send Message</button>
+                <asp:Button ID="btnSendMessage" runat="server" Text="Send Message" CssClass="btn btn-sp-primary w-100 py-3" OnClientClick="alert('Thank you! Your query has been submitted to the Examination Helpdesk.'); return false;" />
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -205,4 +205,3 @@
 </html>
 
 </asp:Content>
-
