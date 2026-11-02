@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/default_page.Master" AutoEventWireup="true" CodeBehind="login-selection.aspx.cs" Inherits="Final_project.login_selection" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/default_page.Master" AutoEventWireup="true" CodeBehind="login-selection.aspx.cs" Inherits="Final_project.login_selection" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" runat="server" contentplaceholderid="ContentPlaceHolder1">
@@ -89,9 +90,8 @@
               <li><i class="bi bi-check-circle-fill"></i> Live Attendance Tracker</li>
             </ul>
           </div>
-          <a href="faculty/login.aspx" class="btn btn-sp-primary w-100">
-            Continue <i class="bi bi-arrow-right ms-1"></i>
-          </a>
+          <%-- ASP.NET HyperLink for Faculty Portal --%>
+          <asp:HyperLink ID="lnkFacultyPortal" runat="server" NavigateUrl="~/faculty/login.aspx" CssClass="btn btn-sp-primary w-100">Continue <i class="bi bi-arrow-right ms-1"></i></asp:HyperLink>
         </div>
       </div>
 
@@ -111,9 +111,8 @@
               <li><i class="bi bi-check-circle-fill"></i> Code & ZIP Submissions</li>
             </ul>
           </div>
-          <a href="student/login.aspx" class="btn btn-sp-primary w-100">
-            Continue <i class="bi bi-arrow-right ms-1"></i>
-          </a>
+          <%-- ASP.NET HyperLink for Student Portal --%>
+          <asp:HyperLink ID="lnkStudentPortal" runat="server" NavigateUrl="~/student/login.aspx" CssClass="btn btn-sp-primary w-100">Continue <i class="bi bi-arrow-right ms-1"></i></asp:HyperLink>
         </div>
       </div>
 
@@ -133,9 +132,8 @@
               <li><i class="bi bi-check-circle-fill"></i> Grade Audit & PDF Export</li>
             </ul>
           </div>
-          <a href="evaluator/login.aspx" class="btn btn-sp-primary w-100">
-            Continue <i class="bi bi-arrow-right ms-1"></i>
-          </a>
+          <%-- ASP.NET HyperLink for Evaluator Portal --%>
+          <asp:HyperLink ID="lnkEvaluatorPortal" runat="server" NavigateUrl="~/evaluator/login.aspx" CssClass="btn btn-sp-primary w-100">Continue <i class="bi bi-arrow-right ms-1"></i></asp:HyperLink>
         </div>
       </div>
 
@@ -155,10 +153,9 @@
               <li><i class="bi bi-check-circle-fill"></i> Security Audit Logs</li>
             </ul>
           </div>
-          <a href="admin/login.aspx" class="btn btn-sp-primary w-100">
-            Continue <i class="bi bi-arrow-right ms-1"></i>
+          <%-- ASP.NET HyperLink for Admin Portal --%>
+          <asp:HyperLink ID="lnkAdminPortal" runat="server" NavigateUrl="~/admin/login.aspx" CssClass="btn btn-sp-primary w-100">Continue <i class="bi bi-arrow-right ms-1"></i></asp:HyperLink>
 
-          </a>
         </div>
       </div>
     </div>
@@ -233,4 +230,3 @@
 </html>
 
   </asp:Content>
-
