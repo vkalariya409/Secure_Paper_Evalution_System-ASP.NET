@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="faculty.master.cs" Inherits="Final_project.faculty.faculty" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="faculty.master.cs" Inherits="Final_project.faculty.faculty" %>
 
 <!DOCTYPE html>
 
@@ -69,7 +70,8 @@
         <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
         <div class="sp-nav-search">
           <i class="bi bi-search"></i>
-          <input type="text" placeholder="Search subjects, students, papers...">
+          <%-- ASP.NET Search TextBox --%>
+          <asp:TextBox ID="txtSearch" runat="server" placeholder="Search subjects, students, papers..."></asp:TextBox>
         </div>
       </div>
 

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="attendance.aspx.cs" Inherits="Final_project.faculty.attendance" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="attendance.aspx.cs" Inherits="Final_project.faculty.attendance" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -12,7 +13,8 @@
           </ol>
         </nav>
       </div>
-      <button class="btn btn-sp-primary" onclick="alert('Attendance saved successfully!')"><i class="bi bi-check-all me-1"></i> Save Attendance</button>
+      <%-- ASP.NET Save Attendance Button --%>
+      <asp:Button ID="btnSaveAttendance" runat="server" Text="Save Attendance" CssClass="btn btn-sp-primary" OnClientClick="alert('Attendance saved successfully!'); return false;" />
     </div>
 
     <div class="sp-content">
@@ -20,18 +22,21 @@
         <div class="row g-3">
           <div class="col-md-4">
             <label class="form-label fw-bold">Select Date</label>
-            <input type="date" class="form-control" value="2026-07-28">
+            <%-- ASP.NET Date TextBox --%>
+            <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="form-control" Text="2026-07-28"></asp:TextBox>
           </div>
           <div class="col-md-4">
             <label class="form-label fw-bold">Subject</label>
-            <select class="form-select">
-              <option value="BCA-201">BCA-201 - ASP.NET Web Development</option>
-              <option value="BCA-202">BCA-202 - C# Programming</option>
-            </select>
+            <%-- ASP.NET Subject DropDownList --%>
+            <asp:DropDownList ID="ddlSubject" runat="server" CssClass="form-select">
+              <asp:ListItem Value="BCA-201">BCA-201 - ASP.NET Web Development</asp:ListItem>
+              <asp:ListItem Value="BCA-202">BCA-202 - C# Programming</asp:ListItem>
+            </asp:DropDownList>
           </div>
           <div class="col-md-4">
             <label class="form-label fw-bold">Batch</label>
-            <input type="text" class="form-control" value="2024-2027">
+            <%-- ASP.NET Batch TextBox --%>
+            <asp:TextBox ID="txtBatch" runat="server" CssClass="form-control" Text="2024-2027"></asp:TextBox>
           </div>
         </div>
       </div>
@@ -57,10 +62,12 @@
                   <td><span class="badge bg-success">94%</span></td>
                   <td>
                     <div class="btn-group" role="group">
-                      <input type="radio" class="btn-check" name="att1" id="p1" checked>
-                      <label class="btn btn-outline-success btn-sm" for="p1">Present</label>
-                      <input type="radio" class="btn-check" name="att1" id="a1">
-                      <label class="btn btn-outline-danger btn-sm" for="a1">Absent</label>
+                      <%-- ASP.NET Present RadioButton --%>
+                      <asp:RadioButton ID="rbPresent1" runat="server" GroupName="att1" CssClass="btn-check" Checked="true" />
+                      <label class="btn btn-outline-success btn-sm" for="rbPresent1">Present</label>
+                      <%-- ASP.NET Absent RadioButton --%>
+                      <asp:RadioButton ID="rbAbsent1" runat="server" GroupName="att1" CssClass="btn-check" />
+                      <label class="btn btn-outline-danger btn-sm" for="rbAbsent1">Absent</label>
                     </div>
                   </td>
                 </tr>
@@ -72,10 +79,12 @@
                   <td><span class="badge bg-success">91%</span></td>
                   <td>
                     <div class="btn-group" role="group">
-                      <input type="radio" class="btn-check" name="att2" id="p2" checked>
-                      <label class="btn btn-outline-success btn-sm" for="p2">Present</label>
-                      <input type="radio" class="btn-check" name="att2" id="a2">
-                      <label class="btn btn-outline-danger btn-sm" for="a2">Absent</label>
+                      <%-- ASP.NET Present RadioButton --%>
+                      <asp:RadioButton ID="rbPresent2" runat="server" GroupName="att2" CssClass="btn-check" Checked="true" />
+                      <label class="btn btn-outline-success btn-sm" for="rbPresent2">Present</label>
+                      <%-- ASP.NET Absent RadioButton --%>
+                      <asp:RadioButton ID="rbAbsent2" runat="server" GroupName="att2" CssClass="btn-check" />
+                      <label class="btn btn-outline-danger btn-sm" for="rbAbsent2">Absent</label>
                     </div>
                   </td>
                 </tr>
@@ -95,4 +104,3 @@
 </html>
 
  </asp:Content>
-

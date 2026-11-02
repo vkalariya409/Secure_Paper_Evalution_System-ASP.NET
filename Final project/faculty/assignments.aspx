@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="assignments.aspx.cs" Inherits="Final_project.faculty.assignments" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="assignments.aspx.cs" Inherits="Final_project.faculty.assignments" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -13,7 +14,8 @@
           </ol>
         </nav>
       </div>
-      <button class="btn btn-sp-primary" onclick="alert('Assignment creation modal opened!')"><i class="bi bi-plus-lg me-1"></i> Create Assignment</button>
+      <%-- ASP.NET Create Assignment Button --%>
+      <asp:Button ID="btnCreateAssignment" runat="server" Text="Create Assignment" CssClass="btn btn-sp-primary" OnClientClick="alert('Assignment creation modal opened!'); return false;" />
     </div>
 
     <div class="sp-content">
@@ -38,7 +40,10 @@
                   <td>Aug 04, 2026</td>
                   <td><span class="badge bg-primary">38 / 42 Submitted</span></td>
                   <td><span class="badge badge-sp success">Active</span></td>
-                  <td><button class="btn btn-sm btn-sp-outline">Review Submissions</button></td>
+                  <td>
+                    <%-- ASP.NET Review Submissions Button --%>
+                    <asp:Button ID="btnReviewSubmission1" runat="server" Text="Review Submissions" CssClass="btn btn-sm btn-sp-outline" />
+                  </td>
                 </tr>
                 <tr>
                   <td class="fw-bold">C# Linq Queries & Delegates</td>
@@ -46,7 +51,10 @@
                   <td>Aug 10, 2026</td>
                   <td><span class="badge bg-warning text-dark">12 / 42 Submitted</span></td>
                   <td><span class="badge badge-sp success">Active</span></td>
-                  <td><button class="btn btn-sm btn-sp-outline">Review Submissions</button></td>
+                  <td>
+                    <%-- ASP.NET Review Submissions Button --%>
+                    <asp:Button ID="btnReviewSubmission2" runat="server" Text="Review Submissions" CssClass="btn btn-sm btn-sp-outline" />
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -64,4 +72,3 @@
 </html>
 
  </asp:Content>
-

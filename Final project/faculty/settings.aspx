@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="settings.aspx.cs" Inherits="Final_project.faculty.settings" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="settings.aspx.cs" Inherits="Final_project.faculty.settings" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -21,20 +22,24 @@
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label fw-semibold">Current Password</label>
-              <input type="password" class="form-control" placeholder="••••••••">
+              <%-- ASP.NET Current Password TextBox --%>
+              <asp:TextBox ID="txtCurrentPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="••••••••"></asp:TextBox>
             </div>
             <div class="col-md-6">
               <label class="form-label fw-semibold">New Password</label>
-              <input type="password" class="form-control" placeholder="••••••••">
+              <%-- ASP.NET New Password TextBox --%>
+              <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="••••••••"></asp:TextBox>
             </div>
             <div class="col-12">
               <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                <%-- ASP.NET Email Notifications CheckBox --%>
+                <asp:CheckBox ID="chkEmailNotif" runat="server" CssClass="form-check-input" Checked="true" />
                 <label class="form-check-label fw-semibold" for="emailNotif">Receive Email Alerts for Practical Submissions</label>
               </div>
             </div>
             <div class="col-12 mt-4">
-              <button type="submit" class="btn btn-sp-primary px-4">Save Settings</button>
+              <%-- ASP.NET Save Settings Button --%>
+              <asp:Button ID="btnSaveSettings" runat="server" Text="Save Settings" CssClass="btn btn-sp-primary px-4" />
             </div>
           </div>
         </form>
@@ -49,4 +54,3 @@
 </body>
 </html>
  </asp:Content>
-

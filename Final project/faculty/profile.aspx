@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="Final_project.faculty.profile" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="Final_project.faculty.profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -33,22 +34,27 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Employee ID</label>
-                  <input type="text" class="form-control" value="EMP-8842" readonly>
+                  <%-- ASP.NET Employee ID TextBox --%>
+                  <asp:TextBox ID="txtEmployeeID" runat="server" CssClass="form-control" Text="EMP-8842" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Department</label>
-                  <input type="text" class="form-control" value="BCA" readonly>
+                  <%-- ASP.NET Department TextBox --%>
+                  <asp:TextBox ID="txtDepartment" runat="server" CssClass="form-control" Text="BCA" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Email Address</label>
-                  <input type="email" class="form-control" value="sarah.jenkins@university.edu">
+                  <%-- ASP.NET Email TextBox --%>
+                  <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control" Text="sarah.jenkins@university.edu"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Phone Number</label>
-                  <input type="tel" class="form-control" value="+1 (555) 019-2834">
+                  <%-- ASP.NET Phone Number TextBox --%>
+                  <asp:TextBox ID="txtPhone" runat="server" TextMode="Phone" CssClass="form-control" Text="+1 (555) 019-2834"></asp:TextBox>
                 </div>
                 <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-sp-primary px-4">Update Profile</button>
+                  <%-- ASP.NET Update Profile Button --%>
+                  <asp:Button ID="btnUpdateProfile" runat="server" Text="Update Profile" CssClass="btn btn-sp-primary px-4" />
                 </div>
               </div>
             </form>
@@ -65,4 +71,3 @@
 </body>
 </html>
  </asp:Content>
-

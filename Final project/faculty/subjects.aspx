@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="subjects.aspx.cs" Inherits="Final_project.faculty.subjects" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="subjects.aspx.cs" Inherits="Final_project.faculty.subjects" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -20,24 +21,26 @@
         <div class="row align-items-center g-3">
           <div class="col-md-6">
             <label class="form-label fw-bold mb-1">Filter by Department</label>
-            <select class="form-select" id="spDepartmentSelect">
-              <option value="BCA" selected>BCA (Bachelor of Computer Applications)</option>
-              <option value="MCA">MCA (Master of Computer Applications)</option>
-              <option value="BBA">BBA (Bachelor of Business Admin)</option>
-              <option value="MBA">MBA (Master of Business Admin)</option>
-              <option value="B.Tech">B.Tech (Computer Science)</option>
-              <option value="Pharmacy">Pharmacy</option>
-              <option value="Nursing">Nursing</option>
-            </select>
+            <%-- ASP.NET Department DropDownList --%>
+            <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-select">
+              <asp:ListItem Value="BCA" Selected="True">BCA (Bachelor of Computer Applications)</asp:ListItem>
+              <asp:ListItem Value="MCA">MCA (Master of Computer Applications)</asp:ListItem>
+              <asp:ListItem Value="BBA">BBA (Bachelor of Business Admin)</asp:ListItem>
+              <asp:ListItem Value="MBA">MBA (Master of Business Admin)</asp:ListItem>
+              <asp:ListItem Value="B.Tech">B.Tech (Computer Science)</asp:ListItem>
+              <asp:ListItem Value="Pharmacy">Pharmacy</asp:ListItem>
+              <asp:ListItem Value="Nursing">Nursing</asp:ListItem>
+            </asp:DropDownList>
           </div>
           <div class="col-md-6">
             <label class="form-label fw-bold mb-1">Semester</label>
-            <select class="form-select">
-              <option value="All">All Active Semesters</option>
-              <option value="1">Semester 1</option>
-              <option value="2">Semester 2</option>
-              <option value="3" selected>Semester 3</option>
-            </select>
+            <%-- ASP.NET Semester DropDownList --%>
+            <asp:DropDownList ID="ddlSemester" runat="server" CssClass="form-select">
+              <asp:ListItem Value="All">All Active Semesters</asp:ListItem>
+              <asp:ListItem Value="1">Semester 1</asp:ListItem>
+              <asp:ListItem Value="2">Semester 2</asp:ListItem>
+              <asp:ListItem Value="3" Selected="True">Semester 3</asp:ListItem>
+            </asp:DropDownList>
           </div>
         </div>
       </div>
@@ -56,4 +59,3 @@
 </body>
 </html>
  </asp:Content>
-

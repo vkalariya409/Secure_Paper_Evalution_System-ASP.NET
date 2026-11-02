@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="students.aspx.cs" Inherits="Final_project.faculty.students" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="students.aspx.cs" Inherits="Final_project.faculty.students" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -56,9 +57,8 @@
                   <td><span class="badge bg-success">94%</span></td>
                   <td><span class="badge badge-sp success">Active</span></td>
                   <td>
-                    <button class="btn btn-sm btn-sp-outline" data-bs-toggle="modal" data-bs-target="#studentModal">
-                      <i class="bi bi-eye"></i> View Profile
-                    </button>
+                    <%-- ASP.NET View Student Profile Button --%>
+                    <asp:Button ID="btnViewStudent1" runat="server" Text="View Profile" CssClass="btn btn-sm btn-sp-outline" />
                   </td>
                 </tr>
 
@@ -82,9 +82,8 @@
                   <td><span class="badge bg-success">91%</span></td>
                   <td><span class="badge badge-sp success">Active</span></td>
                   <td>
-                    <button class="btn btn-sm btn-sp-outline" data-bs-toggle="modal" data-bs-target="#studentModal">
-                      <i class="bi bi-eye"></i> View Profile
-                    </button>
+                    <%-- ASP.NET View Student Profile Button --%>
+                    <asp:Button ID="btnViewStudent2" runat="server" Text="View Profile" CssClass="btn btn-sm btn-sp-outline" />
                   </td>
                 </tr>
               </tbody>
@@ -130,4 +129,3 @@
 </body>
 </html>
  </asp:Content>
-

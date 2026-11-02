@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Final_project.faculty.deshboard" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Final_project.faculty.deshboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -15,7 +16,10 @@
             </nav>
         </div>
         <div class="d-flex gap-2">
-            <a href="upload-quiz.html" class="btn btn-sp-primary"><i class="bi bi-plus-lg me-1"></i>Create Quiz</a> <a href="upload-theory.html" class="btn btn-sp-secondary"><i class="bi bi-upload me-1"></i>Upload Paper</a>
+            <%-- ASP.NET Create Quiz HyperLink --%>
+            <asp:HyperLink ID="lnkCreateQuiz" runat="server" NavigateUrl="upload-quiz.html" CssClass="btn btn-sp-primary"><i class="bi bi-plus-lg me-1"></i>Create Quiz</asp:HyperLink>
+            <%-- ASP.NET Upload Paper HyperLink --%>
+            <asp:HyperLink ID="lnkUploadPaper" runat="server" NavigateUrl="upload-theory.html" CssClass="btn btn-sp-secondary"><i class="bi bi-upload me-1"></i>Upload Paper</asp:HyperLink>
         </div>
     </div>
 
@@ -261,4 +265,3 @@
 </body>
 </html>
  </asp:Content>
-

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="upload-theory.aspx.cs" Inherits="Final_project.faculty.upload_theory" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="upload-theory.aspx.cs" Inherits="Final_project.faculty.upload_theory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -16,70 +17,80 @@
 
     <div class="sp-content">
       <div class="card p-4">
-        <form onsubmit="event.preventDefault(); alert('Theory Question Paper uploaded successfully and schedule locked!');">
+        <%-- ASP.NET Theory Paper Upload Form --%>
+        <div>
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label fw-semibold">Department</label>
-              <select class="form-select" id="spDepartmentSelect" required>
-                <option value="BCA">BCA</option>
-                <option value="MCA">MCA</option>
-                <option value="BBA">BBA</option>
-                <option value="B.Tech">B.Tech</option>
-              </select>
+              <%-- ASP.NET Department DropDownList --%>
+              <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-select" required="required">
+                <asp:ListItem Value="BCA">BCA</asp:ListItem>
+                <asp:ListItem Value="MCA">MCA</asp:ListItem>
+                <asp:ListItem Value="BBA">BBA</asp:ListItem>
+                <asp:ListItem Value="B.Tech">B.Tech</asp:ListItem>
+              </asp:DropDownList>
             </div>
             <div class="col-md-6">
               <label class="form-label fw-semibold">Semester</label>
-              <select class="form-select" required>
-                <option value="Semester 3" selected>Semester 3</option>
-                <option value="Semester 4">Semester 4</option>
-              </select>
+              <%-- ASP.NET Semester DropDownList --%>
+              <asp:DropDownList ID="ddlSemester" runat="server" CssClass="form-select" required="required">
+                <asp:ListItem Value="Semester 3" Selected="True">Semester 3</asp:ListItem>
+                <asp:ListItem Value="Semester 4">Semester 4</asp:ListItem>
+              </asp:DropDownList>
             </div>
             <div class="col-md-6">
               <label class="form-label fw-semibold">Batch</label>
-              <input type="text" class="form-control" value="2024-2027">
+              <%-- ASP.NET Batch TextBox --%>
+              <asp:TextBox ID="txtBatch" runat="server" CssClass="form-control" Text="2024-2027"></asp:TextBox>
             </div>
             <div class="col-md-6">
               <label class="form-label fw-semibold">Subject</label>
-              <select class="form-select" id="spSubjectSelect" required>
-                <option value="BCA-201">BCA-201 - ASP.NET Web Development</option>
-              </select>
+              <%-- ASP.NET Subject DropDownList --%>
+              <asp:DropDownList ID="ddlSubject" runat="server" CssClass="form-select" required="required">
+                <asp:ListItem Value="BCA-201">BCA-201 - ASP.NET Web Development</asp:ListItem>
+              </asp:DropDownList>
             </div>
 
             <div class="col-md-6">
               <label class="form-label fw-semibold">Upload Question Paper Document (PDF / DOC)</label>
-              <input type="file" class="form-control" accept=".pdf,.doc,.docx" required>
+              <%-- ASP.NET FileUpload Control --%>
+              <asp:FileUpload ID="fuQuestionPaper" runat="server" CssClass="form-control" accept=".pdf,.doc,.docx" />
             </div>
 
             <div class="col-md-6">
               <label class="form-label fw-semibold">Exam Date & Lock Time</label>
-              <input type="datetime-local" class="form-control" value="2026-08-05T10:00" required>
+              <%-- ASP.NET Exam Date and Time TextBox --%>
+              <asp:TextBox ID="txtExamDateTime" runat="server" TextMode="DateTimeLocal" CssClass="form-control" Text="2026-08-05T10:00" required="required"></asp:TextBox>
             </div>
 
             <div class="col-md-4">
               <label class="form-label fw-semibold">Duration (Minutes)</label>
-              <input type="number" class="form-control" value="180" min="30">
+              <%-- ASP.NET Duration TextBox --%>
+              <asp:TextBox ID="txtDuration" runat="server" TextMode="Number" CssClass="form-control" Text="180" min="30"></asp:TextBox>
             </div>
             <div class="col-md-4">
               <label class="form-label fw-semibold">Total Marks</label>
-              <input type="number" class="form-control" value="100">
+              <%-- ASP.NET Total Marks TextBox --%>
+              <asp:TextBox ID="txtTotalMarks" runat="server" TextMode="Number" CssClass="form-control" Text="100"></asp:TextBox>
             </div>
             <div class="col-md-4">
               <label class="form-label fw-semibold">Passing Marks</label>
-              <input type="number" class="form-control" value="40">
+              <%-- ASP.NET Passing Marks TextBox --%>
+              <asp:TextBox ID="txtPassingMarks" runat="server" TextMode="Number" CssClass="form-control" Text="40"></asp:TextBox>
             </div>
 
             <div class="col-12">
               <label class="form-label fw-semibold">Special Instructions for Candidates</label>
-              <textarea class="form-control" rows="4" placeholder="Enter rules, allowed tools, and submission deadlines..."></textarea>
+              <%-- ASP.NET Special Instructions TextBox --%>
+              <asp:TextBox ID="txtInstructions" runat="server" TextMode="MultiLine" Rows="4" CssClass="form-control" placeholder="Enter rules, allowed tools, and submission deadlines..."></asp:TextBox>
             </div>
 
             <div class="col-12 mt-4">
-              <button type="submit" class="btn btn-sp-primary px-5 py-2.5 fw-bold">
-                <i class="bi bi-file-earmark-arrow-up-fill me-2"></i> Upload & Schedule Theory Paper
-              </button>
+              <%-- ASP.NET Upload and Schedule Button --%>
+              <asp:Button ID="btnUploadTheory" runat="server" Text="Upload & Schedule Theory Paper" CssClass="btn btn-sp-primary px-5 py-2.5 fw-bold" OnClientClick="alert('Theory Question Paper uploaded successfully and schedule locked!'); return false;" />
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
 
@@ -91,4 +102,3 @@
 </body>
 </html>
  </asp:Content>
-

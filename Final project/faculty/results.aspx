@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="results.aspx.cs" Inherits="Final_project.faculty.results" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="results.aspx.cs" Inherits="Final_project.faculty.results" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder3">
@@ -13,7 +14,8 @@
           </ol>
         </nav>
       </div>
-      <button class="btn btn-sp-secondary" onclick="alert('Results exported as Excel/PDF report!')"><i class="bi bi-download me-1"></i> Export Report</button>
+      <%-- ASP.NET Export Report Button --%>
+      <asp:Button ID="btnExportReport" runat="server" Text="Export Report" CssClass="btn btn-sp-secondary" OnClientClick="alert('Results exported as Excel/PDF report!'); return false;" />
     </div>
 
     <div class="sp-content">
@@ -66,4 +68,3 @@
 </body>
 </html>
  </asp:Content>
-

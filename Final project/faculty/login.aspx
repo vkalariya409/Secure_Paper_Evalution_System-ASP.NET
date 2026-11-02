@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Final_project.faculty.login" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/faculty/faculty.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Final_project.faculty.login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -45,7 +46,8 @@
         <label class="form-label fw-semibold">Faculty ID / Email</label>
         <div class="input-group">
           <span class="input-group-text bg-body-tertiary border-end-0"><i class="bi bi-person-fill text-muted"></i></span>
-          <input type="text" class="form-control border-start-0 py-2" placeholder="FAC-8842 or faculty@univ.edu" value="FAC-8842" required>
+          <%-- ASP.NET Faculty ID / Email TextBox --%>
+          <asp:TextBox ID="txtFacultyID" runat="server" CssClass="form-control border-start-0 py-2" placeholder="FAC-8842 or faculty@univ.edu" Text="FAC-8842" required="required"></asp:TextBox>
         </div>
       </div>
 
@@ -56,18 +58,19 @@
         </div>
         <div class="input-group">
           <span class="input-group-text bg-body-tertiary border-end-0"><i class="bi bi-lock-fill text-muted"></i></span>
-          <input type="password" class="form-control border-start-0 py-2" value="••••••••" required>
+          <%-- ASP.NET Password TextBox --%>
+          <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control border-start-0 py-2" Text="••••••••" required="required"></asp:TextBox>
         </div>
       </div>
 
       <div class="form-check mb-4">
-        <input type="checkbox" class="form-check-input" id="rememberFac" checked>
+        <%-- ASP.NET Remember Login CheckBox --%>
+        <asp:CheckBox ID="chkRememberFac" runat="server" CssClass="form-check-input" Checked="true" />
         <label class="form-check-label text-muted small" for="rememberFac">Remember login on this device</label>
       </div>
 
-      <button type="submit" class="btn btn-sp-primary w-100 py-2.5 fs-6">
-        Log In to Faculty Dashboard <i class="bi bi-arrow-right ms-1"></i>
-      </button>
+      <%-- ASP.NET Login Button --%>
+      <asp:Button ID="btnLogin" runat="server" Text="Log In to Faculty Dashboard" CssClass="btn btn-sp-primary w-100 py-2.5 fs-6" />
     </form>
 
     <div class="border-top border-secondary border-opacity-10 my-4 pt-3 text-center">
@@ -87,4 +90,3 @@
 </html>
 
  </asp:Content>
-
