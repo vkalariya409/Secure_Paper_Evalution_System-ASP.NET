@@ -26,23 +26,23 @@
 <body>
 
 <div class="sp-app-layout">
-  
+
   <aside class="sp-sidebar">
     <div class="sp-sidebar-brand">
       <div class="sp-brand-icon"><i class="bi bi-shield-lock-fill"></i></div>
       <span>SecurePaper</span>
     </div>
-    
+
     <div class="sp-sidebar-menu">
       <div class="sp-sidebar-header">Evaluator Menu</div>
       <div class="sp-nav-item"><a href="dashboard.aspx" class="sp-nav-link active"><i class="bi bi-speedometer2"></i> Dashboard</a></div>
       <div class="sp-nav-item"><a href="subjects.aspx" class="sp-nav-link"><i class="bi bi-journal-bookmark"></i> Subjects</a></div>
-      
+
       <div class="sp-sidebar-header">Paper Grading</div>
       <div class="sp-nav-item"><a href="answer-sheets.aspx" class="sp-nav-link"><i class="bi bi-files"></i> Answer Sheets Queue</a></div>
       <div class="sp-nav-item"><a href="paper-evaluation.aspx" class="sp-nav-link"><i class="bi bi-layout-split"></i> Split-Screen Evaluator</a></div>
       <div class="sp-nav-item"><a href="reports.aspx" class="sp-nav-link"><i class="bi bi-graph-up-arrow"></i> Evaluation Reports</a></div>
-      
+
       <div class="sp-sidebar-header">Account</div>
       <div class="sp-nav-item"><a href="profile.aspx" class="sp-nav-link"><i class="bi bi-person"></i> Profile</a></div>
       <div class="sp-nav-item"><a href="settings.aspx" class="sp-nav-link"><i class="bi bi-gear"></i> Settings</a></div>
@@ -59,7 +59,10 @@
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
         <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search answer scripts..."></div>
+        <div class="sp-nav-search"><i class="bi bi-search"></i>
+          <%-- ASP.NET Search TextBox --%>
+          <asp:TextBox ID="txtSearch" runat="server" placeholder="Search answer scripts..."></asp:TextBox>
+        </div>
       </div>
 
       <div class="sp-navbar-right">
@@ -89,7 +92,7 @@
     </div>
 
     <div class="sp-content">
-      
+
       <!-- Evaluator Stat Cards -->
       <div class="row g-3 mb-4">
         <div class="col-sm-6 col-xl-4">
@@ -161,8 +164,8 @@
 </html>
 
 </asp:ContentPlaceHolder>
-         
-        
+
+
         </div>
     </form>
 </body>

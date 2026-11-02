@@ -2,12 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
-    
+
   <div class="sp-main-wrapper">
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
         <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search..."></div>
+        <div class="sp-nav-search"><i class="bi bi-search"></i>
+          <%-- ASP.NET Search TextBox --%>
+          <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..."></asp:TextBox>
+        </div>
       </div>
       <div class="sp-navbar-right">
         <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
@@ -33,21 +36,25 @@
     <div class="sp-content">
       <div class="card p-4">
         <h5 class="fw-bold mb-3"><i class="bi bi-shield-lock-fill text-warning me-2"></i> Security Settings</h5>
-        <form onsubmit="event.preventDefault(); alert('Evaluator password updated!');">
+        <%-- ASP.NET Security Settings Panel --%>
+        <asp:Panel ID="pnlSettings" runat="server">
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label fw-semibold">Current Password</label>
-              <input type="password" class="form-control" placeholder="••••••••">
+              <%-- ASP.NET Current Password TextBox --%>
+              <asp:TextBox ID="txtCurrentPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="••••••••"></asp:TextBox>
             </div>
             <div class="col-md-6">
               <label class="form-label fw-semibold">New Password</label>
-              <input type="password" class="form-control" placeholder="••••••••">
+              <%-- ASP.NET New Password TextBox --%>
+              <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="••••••••"></asp:TextBox>
             </div>
             <div class="col-12 mt-4">
-              <button type="submit" class="btn btn-warning text-dark px-4 fw-bold">Save Settings</button>
+              <%-- ASP.NET Save Settings Button --%>
+              <asp:Button ID="btnSaveSettings" runat="server" Text="Save Settings" CssClass="btn btn-warning text-dark px-4 fw-bold" OnClientClick="alert('Evaluator password updated!'); return false;" />
             </div>
           </div>
-        </form>
+        </asp:Panel>
       </div>
     </div>
 
@@ -60,4 +67,3 @@
 </html>
 
 </asp:Content>
-

@@ -10,7 +10,9 @@
                 </button>
                 <div class="sp-nav-search">
                     <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search answer scripts..."></div>
+                    <%-- ASP.NET Search TextBox --%>
+                    <asp:TextBox ID="txtSearch" runat="server" placeholder="Search answer scripts..."></asp:TextBox>
+                </div>
             </div>
             <div class="sp-navbar-right">
                 <button class="sp-icon-btn sp-theme-toggle">
@@ -38,7 +40,7 @@
             <a href="paper-evaluation.html" class="btn btn-warning text-dark fw-bold px-4"><i class="bi bi-play-circle-fill me-1"></i>Start Paper Evaluation</a>
         </div>
         <div class="sp-content">
-      
+
       <!-- Evaluator Stat Cards -->
             <div class="row g-3 mb-4">
                 <div class="col-sm-6 col-xl-4">
@@ -117,4 +119,3 @@
 </html>
 
 </asp:Content>
-

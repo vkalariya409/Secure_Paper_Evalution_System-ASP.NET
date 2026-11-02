@@ -2,12 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
-    
+
   <div class="sp-main-wrapper">
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
         <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search..."></div>
+        <div class="sp-nav-search"><i class="bi bi-search"></i>
+          <%-- ASP.NET Search TextBox --%>
+          <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..."></asp:TextBox>
+        </div>
       </div>
       <div class="sp-navbar-right">
         <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
@@ -79,4 +82,3 @@
 </html>
 
 </asp:Content>
-

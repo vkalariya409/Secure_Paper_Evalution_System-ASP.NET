@@ -2,12 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
- 
+
   <div class="sp-main-wrapper">
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
         <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search..."></div>
+        <div class="sp-nav-search"><i class="bi bi-search"></i>
+          <%-- ASP.NET Search TextBox --%>
+          <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..."></asp:TextBox>
+        </div>
       </div>
       <div class="sp-navbar-right">
         <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
@@ -41,34 +44,37 @@
     </div>
 
     <div class="sp-content">
-      
+
       <!-- Breakdown Filters (Department-Wise, Faculty-Wise, Student-Wise, Semester-Wise, Batch-Wise) -->
       <div class="card p-3 mb-4">
         <div class="row g-3">
           <div class="col-md-4">
             <label class="form-label fw-bold">Department-Wise</label>
-            <select class="form-select">
-              <option value="BCA" selected>BCA Department</option>
-              <option value="MCA">MCA Department</option>
-              <option value="BBA">BBA Department</option>
-            </select>
+            <%-- ASP.NET Department DropDownList --%>
+            <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-select">
+              <asp:ListItem Value="BCA" Selected="True">BCA Department</asp:ListItem>
+              <asp:ListItem Value="MCA">MCA Department</asp:ListItem>
+              <asp:ListItem Value="BBA">BBA Department</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <div class="col-md-4">
             <label class="form-label fw-bold">Faculty-Wise</label>
-            <select class="form-select">
-              <option value="All">All Faculty</option>
-              <option value="Sarah">Dr. Sarah Jenkins</option>
-              <option value="Alan">Prof. Alan Turing</option>
-            </select>
+            <%-- ASP.NET Faculty DropDownList --%>
+            <asp:DropDownList ID="ddlFaculty" runat="server" CssClass="form-select">
+              <asp:ListItem Value="All">All Faculty</asp:ListItem>
+              <asp:ListItem Value="Sarah">Dr. Sarah Jenkins</asp:ListItem>
+              <asp:ListItem Value="Alan">Prof. Alan Turing</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <div class="col-md-4">
             <label class="form-label fw-bold">Semester & Batch-Wise</label>
-            <select class="form-select">
-              <option value="Sem3">Semester 3 (2024-2027)</option>
-              <option value="Sem4">Semester 4 (2024-2027)</option>
-            </select>
+            <%-- ASP.NET Semester and Batch DropDownList --%>
+            <asp:DropDownList ID="ddlSemesterBatch" runat="server" CssClass="form-select">
+              <asp:ListItem Value="Sem3">Semester 3 (2024-2027)</asp:ListItem>
+              <asp:ListItem Value="Sem4">Semester 4 (2024-2027)</asp:ListItem>
+            </asp:DropDownList>
           </div>
         </div>
       </div>
@@ -122,4 +128,3 @@
 </body>
 </html>
 </asp:Content>
-

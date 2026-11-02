@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" runat="server" contentplaceholderid="ContentPlaceHolder1">
-   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,10 +33,10 @@
 </asp:Content>
 <asp:Content ID="Content5" runat="server" contentplaceholderid="ContentPlaceHolder2">
     <div class="container-fluid py-3 px-4">
-    
+
     <!-- Split Screen Container (Specs: Left Question Paper | Right Student Answer Sheet) -->
     <div class="sp-eval-container mb-3">
-      
+
       <!-- Left Side Pane: Question Paper & Answer Key -->
       <div class="sp-eval-pane">
         <div class="sp-eval-pane-header bg-primary text-white">
@@ -100,28 +100,33 @@
     <!-- Below Marks Entry & Final Grade Summary Toolbar -->
     <div class="card p-4 shadow-lg border-primary">
       <h5 class="fw-bold mb-3"><i class="bi bi-calculator-fill text-primary me-2"></i> Paper Evaluation Marks Entry & Result Summary</h5>
-      
-      <form onsubmit="event.preventDefault(); alert('Evaluation submitted & final grade locked!'); window.location.href='answer-sheets.html';">
+
+      <%-- ASP.NET Evaluation Form --%>
+      <asp:Panel ID="pnlEvaluation" runat="server">
         <div class="row g-3">
-          
+
           <div class="col-sm-6 col-md-3">
             <label class="form-label fw-bold small">Q1 Marks (Max 10)</label>
-            <input type="number" step="0.5" class="form-control sp-eval-mark-input" value="10" min="0" max="10">
+            <%-- ASP.NET Q1 Marks TextBox --%>
+            <asp:TextBox ID="txtQ1Marks" runat="server" TextMode="Number" step="0.5" CssClass="form-control sp-eval-mark-input" Text="10" min="0" max="10"></asp:TextBox>
           </div>
 
           <div class="col-sm-6 col-md-3">
             <label class="form-label fw-bold small">Q2 Marks (Max 10)</label>
-            <input type="number" step="0.5" class="form-control sp-eval-mark-input" value="10" min="0" max="10">
+            <%-- ASP.NET Q2 Marks TextBox --%>
+            <asp:TextBox ID="txtQ2Marks" runat="server" TextMode="Number" step="0.5" CssClass="form-control sp-eval-mark-input" Text="10" min="0" max="10"></asp:TextBox>
           </div>
 
           <div class="col-sm-6 col-md-3">
             <label class="form-label fw-bold small">Q3 Marks (Max 15)</label>
-            <input type="number" step="0.5" class="form-control sp-eval-mark-input" value="13.5" min="0" max="15">
+            <%-- ASP.NET Q3 Marks TextBox --%>
+            <asp:TextBox ID="txtQ3Marks" runat="server" TextMode="Number" step="0.5" CssClass="form-control sp-eval-mark-input" Text="13.5" min="0" max="15"></asp:TextBox>
           </div>
 
           <div class="col-sm-6 col-md-3">
             <label class="form-label fw-bold small">Q4 Marks (Max 15)</label>
-            <input type="number" step="0.5" class="form-control sp-eval-mark-input" value="12.5" min="0" max="15">
+            <%-- ASP.NET Q4 Marks TextBox --%>
+            <asp:TextBox ID="txtQ4Marks" runat="server" TextMode="Number" step="0.5" CssClass="form-control sp-eval-mark-input" Text="12.5" min="0" max="15"></asp:TextBox>
           </div>
 
           <div class="col-12">
@@ -143,17 +148,17 @@
 
           <div class="col-12">
             <label class="form-label fw-semibold">Evaluator Feedback & Official Remarks</label>
-            <textarea class="form-control" rows="2" placeholder="Write remarks for student marksheet...">Exceptional understanding of ASP.NET Web Forms state management and database connectivity.</textarea>
+            <%-- ASP.NET Evaluator Feedback TextBox --%>
+            <asp:TextBox ID="txtFeedback" runat="server" TextMode="MultiLine" Rows="2" CssClass="form-control" placeholder="Write remarks for student marksheet...">Exceptional understanding of ASP.NET Web Forms state management and database connectivity.</asp:TextBox>
           </div>
 
           <div class="col-12 text-end mt-3">
-            <button type="submit" class="btn btn-warning text-dark fw-bold btn-lg px-5">
-              <i class="bi bi-check-circle-fill me-2"></i> Submit & Lock Evaluation
-            </button>
+            <%-- ASP.NET Submit Evaluation Button --%>
+            <asp:Button ID="btnSubmitEvaluation" runat="server" Text="Submit & Lock Evaluation" CssClass="btn btn-warning text-dark fw-bold btn-lg px-5" OnClientClick="alert('Evaluation submitted & final grade locked!'); window.location.href='answer-sheets.html'; return false;" />
           </div>
 
         </div>
-      </form>
+      </asp:Panel>
     </div>
 
   </div>
@@ -164,4 +169,3 @@
 </html>
 
 </asp:Content>
-

@@ -6,7 +6,10 @@
     <header class="sp-navbar">
       <div class="d-flex align-items-center gap-3">
         <button class="btn btn-sm btn-light d-lg-none sp-sidebar-toggler"><i class="bi bi-list fs-5"></i></button>
-        <div class="sp-nav-search"><i class="bi bi-search"></i><input type="text" placeholder="Search..."></div>
+        <div class="sp-nav-search"><i class="bi bi-search"></i>
+          <%-- ASP.NET Search TextBox --%>
+          <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..."></asp:TextBox>
+        </div>
       </div>
       <div class="sp-navbar-right">
         <button class="sp-icon-btn sp-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
@@ -43,29 +46,35 @@
         <div class="col-md-8">
           <div class="card p-4">
             <h5 class="fw-bold mb-3"><i class="bi bi-person-lines-fill text-warning me-2"></i> Evaluator Details</h5>
-            <form onsubmit="event.preventDefault(); alert('Profile updated!');">
+            <%-- ASP.NET Profile Form --%>
+            <asp:Panel ID="pnlProfile" runat="server">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Full Name</label>
-                  <input type="text" class="form-control" value="Prof. Robert Langdon">
+                  <%-- ASP.NET Full Name TextBox --%>
+                  <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control" Text="Prof. Robert Langdon"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Evaluator ID</label>
-                  <input type="text" class="form-control" value="EVAL-7721" readonly>
+                  <%-- ASP.NET Evaluator ID TextBox --%>
+                  <asp:TextBox ID="txtEvaluatorID" runat="server" CssClass="form-control" Text="EVAL-7721" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Email Address</label>
-                  <input type="email" class="form-control" value="robert.l@evaluators.edu">
+                  <%-- ASP.NET Email TextBox --%>
+                  <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control" Text="robert.l@evaluators.edu"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold">Phone Number</label>
-                  <input type="tel" class="form-control" value="+1 (555) 019-2834">
+                  <%-- ASP.NET Phone TextBox --%>
+                  <asp:TextBox ID="txtPhone" runat="server" TextMode="Phone" CssClass="form-control" Text="+1 (555) 019-2834"></asp:TextBox>
                 </div>
                 <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-warning text-dark px-4 fw-bold">Update Profile</button>
+                  <%-- ASP.NET Update Profile Button --%>
+                  <asp:Button ID="btnUpdateProfile" runat="server" Text="Update Profile" CssClass="btn btn-warning text-dark px-4 fw-bold" OnClientClick="alert('Profile updated!'); return false;" />
                 </div>
               </div>
-            </form>
+            </asp:Panel>
           </div>
         </div>
       </div>
@@ -80,4 +89,3 @@
 </html>
 
 </asp:Content>
-
