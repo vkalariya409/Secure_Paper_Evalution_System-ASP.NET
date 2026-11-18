@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_project.Business_Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,13 @@ namespace Final_project.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            admin_bl adm;
 
+            void startcon()
+            {
+                adm = new admin_bl();
+                adm.getcon();
+            }
         }
     }
 }
