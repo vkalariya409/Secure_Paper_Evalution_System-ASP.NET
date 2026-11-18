@@ -15,13 +15,13 @@ namespace Final_project.faculty
     {
 
         /// <summary>
-        /// ddlDepartment control.
+        /// spDepartmentSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDepartment;
+        protected global::System.Web.UI.WebControls.DropDownList spDepartmentSelect;
 
         /// <summary>
         /// ddlSemester control.
@@ -42,13 +42,13 @@ namespace Final_project.faculty
         protected global::System.Web.UI.WebControls.TextBox txtBatch;
 
         /// <summary>
-        /// ddlSubject control.
+        /// spSubjectSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSubject;
+        protected global::System.Web.UI.WebControls.DropDownList spSubjectSelect;
 
         /// <summary>
         /// txtQuizTitle control.
@@ -150,48 +150,39 @@ namespace Final_project.faculty
         protected global::System.Web.UI.WebControls.DropDownList ddlDifficulty;
 
         /// <summary>
-        /// btnSaveQuiz control.
+        /// p1a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveQuiz;
+        protected global::System.Web.UI.WebControls.RadioButton p1a;
 
         /// <summary>
-        /// rbPreviewA control.
+        /// p1b control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbPreviewA;
+        protected global::System.Web.UI.WebControls.RadioButton p1b;
 
         /// <summary>
-        /// rbPreviewB control.
+        /// p1c control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbPreviewB;
+        protected global::System.Web.UI.WebControls.RadioButton p1c;
 
         /// <summary>
-        /// rbPreviewC control.
+        /// p1d control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbPreviewC;
-
-        /// <summary>
-        /// rbPreviewD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbPreviewD;
+        protected global::System.Web.UI.WebControls.RadioButton p1d;
     }
 }
