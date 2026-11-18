@@ -80,6 +80,10 @@
     <Content Include="admin\publish-results.aspx" />
     <Content Include="admin\register.aspx" />
     <Content Include="admin\system-settings.aspx" />
+    <Content Include="App_Data\SP_DB.mdf" />
+    <Content Include="App_Data\SP_DB_log.ldf">
+      <DependentUpon>SP_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\css\style.css" />
     <Content Include="assets\js\charts.js" />
     <Content Include="assets\js\main.js" />
