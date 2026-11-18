@@ -224,6 +224,22 @@
     <Compile Include="admin\system-settings.aspx.designer.cs">
       <DependentUpon>system-settings.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Business_Logic\admin_bl.cs" />
+    <Compile Include="Business_Logic\assignment_bl.cs" />
+    <Compile Include="Business_Logic\attendance_bl.cs" />
+    <Compile Include="Business_Logic\department_bl.cs" />
+    <Compile Include="Business_Logic\evaluation_bl.cs" />
+    <Compile Include="Business_Logic\evaluator_bl.cs" />
+    <Compile Include="Business_Logic\exam_bl.cs" />
+    <Compile Include="Business_Logic\faculty_bl.cs" />
+    <Compile Include="Business_Logic\logs_bl.cs" />
+    <Compile Include="Business_Logic\notification_bl.cs" />
+    <Compile Include="Business_Logic\question_bl.cs" />
+    <Compile Include="Business_Logic\result_bl.cs" />
+    <Compile Include="Business_Logic\settings_bl.cs" />
+    <Compile Include="Business_Logic\student_bl.cs" />
+    <Compile Include="Business_Logic\subject_bl.cs" />
+    <Compile Include="Business_Logic\submission_bl.cs" />
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -520,9 +536,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business_Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
