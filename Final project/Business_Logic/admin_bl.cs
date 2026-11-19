@@ -101,7 +101,7 @@ namespace Final_project.Business_Logic
                     //cmd = new SqlCommand(query1, con, trans);
                     //cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand("INSERT INTO StudentDetails(UserID,EnrollmentNumber,RollNumber,Department,Course,Semester,AdmissionYear) values(" + userID + ",'" + enrollment + "','" + rollno + "','" +studentDept + "','" + course + "'," + semester + "," + admissionYear + ")", con);
+                    cmd = new SqlCommand("INSERT INTO StudentDetails(UserID,EnrollmentNumber,RollNumber,Department,Course,Semester,AdmissionYear) values(" + userID + ",'" + enrollment + "','" + rollno + "','" + studentDept + "','" + course + "'," + semester + "," + admissionYear + ")", con);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -120,7 +120,7 @@ namespace Final_project.Business_Logic
                     //cmd = new SqlCommand(query2, con, trans);
                     //cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand("INSERT INTO FacultyDetails(UserID,FacultyID,Department,Designation,Qualification) values(" +userID + ",'" + facultyID + "','" + facultyDept + "','" +designation + "','" + facultyQualification + "')", con);
+                    cmd = new SqlCommand("INSERT INTO FacultyDetails(UserID,FacultyID,Department,Designation,Qualification) values(" + userID + ",'" + facultyID + "','" + facultyDept + "','" + designation + "','" + facultyQualification + "')", con);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -140,12 +140,12 @@ namespace Final_project.Business_Logic
                     //cmd = new SqlCommand(query3, con, trans);
                     //cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand("INSERT INTO EvaluatorDetails(UserID,EvaluatorCode,Department,Specialization,Qualification,EvaluatorType) values(" +userID + ",'" + evaluatorCode + "','" + evaluatorDept + "','" +specialization + "','" + evaluatorQualification + "','" + evaluatorType + "')", con);
+                    cmd = new SqlCommand("INSERT INTO EvaluatorDetails(UserID,EvaluatorCode,Department,Specialization,Qualification,EvaluatorType) values(" + userID + ",'" + evaluatorCode + "','" + evaluatorDept + "','" + specialization + "','" + evaluatorQualification + "','" + evaluatorType + "')", con);
 
                     cmd.ExecuteNonQuery();
                 }
 
-               // trans.Commit();
+                // trans.Commit();
             }
 
             // Registration Session
@@ -203,7 +203,7 @@ namespace Final_project.Business_Logic
             ds = new DataSet();
             da.Fill(ds);
 
-            
+
             return ds;
         }
 
@@ -212,7 +212,7 @@ namespace Final_project.Business_Logic
         {
             con = getcon();
 
-            da = new SqlDataAdapter("SELECT * FROM Users WHERE Role='" + role +"' AND ApprovalStatus='Pending'", con);
+            da = new SqlDataAdapter("SELECT * FROM Users WHERE Role='" + role + "' AND ApprovalStatus='Pending'", con);
 
             ds = new DataSet();
             da.Fill(ds);
@@ -237,21 +237,53 @@ namespace Final_project.Business_Logic
         {
             con = getcon();
 
-            cmd = new SqlCommand("UPDATE Users SET ApprovalStatus='" + status + "', IsActive=CASE WHEN '" + status + "'='Approved' THEN 1 ELSE 0 END, " +"RejectionReason='" + reason + "', ReviewedAt=GETDATE(), ReviewedBy=" + adminID + ", UpdatedAt=GETDATE() WHERE UserID=" + userID +" AND Role<>'Admin'", con);
+            cmd = new SqlCommand("UPDATE Users SET ApprovalStatus='" + status + "', IsActive=CASE WHEN '" + status + "'='Approved' THEN 1 ELSE 0 END, " + "RejectionReason='" + reason + "', ReviewedAt=GETDATE(), ReviewedBy=" + adminID + ", UpdatedAt=GETDATE() WHERE UserID=" + userID + " AND Role<>'Admin'", con);
 
             cmd.ExecuteNonQuery();
         }
 
         // Insert Admin
-        public void insert_admin(string nm, string email, string phone, string password)
+        public bool insert_admin(string nm, string email, string phone, string password)
         {
+            con = getcon();
+
+            // Check Existing Email
+            cmd = new SqlCommand(
+                "SELECT COUNT(*) FROM Users WHERE Email=@Email", con);
+
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (count > 0)
+            {
+                con.Close();
+                return false;
+            }
+
+            // Generate Password Hash and Salt
             string salt;
             string hash = GeneratePasswordHash(password, out salt);
 
-            con = getcon();
-
+            // Insert Admin
             cmd = new SqlCommand("INSERT INTO Users(FullName,Email,Phone,PasswordHash,PasswordSalt,Role,ApprovalStatus,EmailVerified,IsActive) values('" + nm + "','" + email + "','" + phone + "','" + hash + "','" + salt + "','Admin','Approved',1,1)", con);
 
             cmd.ExecuteNonQuery();
+
+            return true;
         }
+
+        //// Insert Admin
+        //public void insert_admin(string nm, string email, string phone, string password)
+        //{
+        //    string salt;
+        //    string hash = GeneratePasswordHash(password, out salt);
+
+        //    con = getcon();
+
+        //    cmd = new SqlCommand("INSERT INTO Users(FullName,Email,Phone,PasswordHash,PasswordSalt,Role,ApprovalStatus,EmailVerified,IsActive) values('" + nm + "','" + email + "','" + phone + "','" + hash + "','" + salt + "','Admin','Approved',1,1)", con);
+
+        //    cmd.ExecuteNonQuery();
+        //}
+    }
 }
