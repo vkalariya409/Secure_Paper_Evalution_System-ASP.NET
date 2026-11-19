@@ -24,38 +24,59 @@ namespace Final_project.Business_Logic
             return con;
         }
 
-        public void insert(string nm, string eml, string gen, string ct, string mbl, string img)
+        // Student Login
+        public string student_login(string email, string password)
         {
-            cmd = new SqlCommand("INSERT INTO Emp_tbl(Name,Email,Gender,City,Mobile,Image) values('" + nm + "','" + eml + "','" + gen + "','" + ct + "','" + mbl + "','" + img + "')", con);
-            cmd.ExecuteNonQuery();
-        }
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+            con.Open();
 
-        public DataSet select()
-        {
-            da = new SqlDataAdapter("SELECT * FROM Emp_tbl", con);
+            da = new SqlDataAdapter(
+                "SELECT * FROM Users WHERE Email='" + email.Replace("'", "''") +"' AND Role='Student'", con);
+
             ds = new DataSet();
             da.Fill(ds);
-            return ds;
-        }
 
-        public DataSet selectbyID(int Id)
-        {
-            da = new SqlDataAdapter("SELECT * FROM Emp_tbl WHERE Id=" + Id, con);
-            ds = new DataSet();
-            da.Fill(ds);
-            return ds;
-        }
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                return "Invalid";
+            }
 
-        public void update(int Id, string nm, string eml, string gen, string ct, string mbl)
-        {
-            cmd = new SqlCommand("UPDATE Emp_tbl SET Name='" + nm + "',Email='" + eml + "',Gender='" + gen + "',City='" + ct + "',Mobile='" + mbl + "' WHERE Id=" + Id, con);
-            cmd.ExecuteNonQuery();
-        }
+            string status = ds.Tables[0].Rows[0]["ApprovalStatus"].ToString();
 
-        public void delete(int Id)
-        {
-            cmd = new SqlCommand("DELETE FROM Emp_tbl WHERE Id=" + Id, con);
-            cmd.ExecuteNonQuery();
+            if (status == "Pending")
+            {
+                return "Pending";
+            }
+
+            if (status == "Rejected")
+            {
+                return "Rejected";
+            }
+
+            if (ds.Tables[0].Rows[0]["IsActive"].ToString() != "True")
+            {
+                return "Inactive";
+            }
+
+            string savedSalt = ds.Tables[0].Rows[0]["PasswordSalt"].ToString();
+            string savedHash = ds.Tables[0].Rows[0]["PasswordHash"].ToString();
+
+            admin_bl obj = new admin_bl();
+
+            if (obj.VerifyPassword(password, savedSalt, savedHash))
+            {
+                HttpContext.Current.Session["UserID"] =
+                    ds.Tables[0].Rows[0]["UserID"].ToString();
+
+                HttpContext.Current.Session["UserRole"] = "Student";
+
+                HttpContext.Current.Session["StudentName"] =
+                    ds.Tables[0].Rows[0]["FullName"].ToString();
+
+                return "Success";
+            }
+
+            return "Invalid";
         }
     }
 }
