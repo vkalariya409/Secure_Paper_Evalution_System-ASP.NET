@@ -55,6 +55,45 @@ namespace Final_project.Business_Logic
                 return hash == savedHash;
             }
         }
+
+        // Admin Login
+        public bool admin_login(string email, string password, out int adminID, out string adminName)
+        {
+            adminID = 0;
+            adminName = "";
+
+            using (SqlConnection con = getcon())
+            {
+                string query = "SELECT UserID, FullName, PasswordHash, PasswordSalt, ApprovalStatus, IsActive " +
+                               "FROM Users WHERE Email=@Email AND Role='Admin'";
+
+                cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    string hash = dr["PasswordHash"].ToString();
+                    string salt = dr["PasswordSalt"].ToString();
+
+                    if (VerifyPassword(password, salt, hash) &&
+                        dr["ApprovalStatus"].ToString() == "Approved" &&
+                        Convert.ToBoolean(dr["IsActive"]))
+                    {
+                        adminID = Convert.ToInt32(dr["UserID"]);
+                        adminName = dr["FullName"].ToString();
+
+                        dr.Close();
+                        return true;
+                    }
+                }
+
+                dr.Close();
+            }
+
+            return false;
+        }
         // Insert Registration
         public int insert_registration(
             string nm, string eml, string mbl, string pwd, string role,

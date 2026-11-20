@@ -68,7 +68,7 @@
                                 runat="server"
                                 CssClass="form-control border-start-0 py-2"
                                 placeholder="admin@securepaper.edu"
-                                Text="admin@securepaper.edu">
+                                Text=""
                             </asp:TextBox>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                         ID="btnLogin"
                         runat="server"
                         Text="Log In to Admin Dashboard"
-                        CssClass="btn btn-sp-primary w-100 py-2.5 fs-6" />
+                        CssClass="btn btn-sp-primary w-100 py-2.5 fs-6" OnClick="btnLogin_Click" />
 
                 </asp:Panel>
 
