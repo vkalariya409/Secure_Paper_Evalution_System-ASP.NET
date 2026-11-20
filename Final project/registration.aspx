@@ -724,7 +724,7 @@
                     runat="server"
                     Text="Submit Registration"
                     CssClass="sp-register-btn"
-                    OnClientClick="validateRegistration(); return false;" OnClick="btnRegister_Click" />
+                    OnClientClick="return validateRegistration();" OnClick="btnRegister_Click" />
 
                 <div class="sp-register-footer">
                     Already have an account?
@@ -855,9 +855,7 @@
                 return false;
             }
 
-            alert("The " + role + " registration form UI is ready. Database registration will be connected in the next step.");
-
-            return false;
+            return true;
         }
 
     </script>

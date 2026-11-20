@@ -94,6 +94,81 @@ namespace Final_project.Business_Logic
 
             return false;
         }
+        //// Insert Registration
+        //public int insert_registration(
+        //    string nm, string eml, string mbl, string pwd, string role,
+        //    string enrollment, string rollno, string studentDept,
+        //    string course, string semester, string admissionYear,
+        //    string facultyID, string facultyDept, string designation,
+        //    string facultyQualification, string evaluatorCode,
+        //    string evaluatorDept, string specialization,
+        //    string evaluatorQualification, string evaluatorType)
+        //{
+        //    string salt;
+        //    string hash = GeneratePasswordHash(pwd, out salt);
+
+        //    int userID;
+
+        //    using (SqlConnection con = getcon())
+        //    using (SqlTransaction trans = con.BeginTransaction())
+        //    {
+        //        // Users Table
+        //        string query = "INSERT INTO Users " +
+        //            "(FullName,Email,Phone,PasswordHash,PasswordSalt,Role,ApprovalStatus,EmailVerified,IsActive) " +
+        //            "OUTPUT INSERTED.UserID VALUES('" +
+        //            nm.Replace("'", "''") + "','" +
+        //            eml.Replace("'", "''") + "','" +
+        //            mbl.Replace("'", "''") + "','" +
+        //            hash + "','" + salt + "','" +
+        //            role + "','Pending',0,0)";
+
+        //        cmd = new SqlCommand(query, con, trans);
+        //        userID = Convert.ToInt32(cmd.ExecuteScalar());
+
+        //        // Student Details
+        //        if (role == "Student")
+        //        {
+
+
+        //            cmd = new SqlCommand("INSERT INTO StudentDetails(UserID,EnrollmentNumber,RollNumber,Department,Course,Semester,AdmissionYear) values(" + userID + ",'" + enrollment + "','" + rollno + "','" + studentDept + "','" + course + "'," + semester + "," + admissionYear + ")", con);
+
+        //            cmd.ExecuteNonQuery();
+        //        }
+
+        //        // Faculty Details
+        //        else if (role == "Faculty")
+        //        {
+
+
+        //            cmd = new SqlCommand("INSERT INTO FacultyDetails(UserID,FacultyID,Department,Designation,Qualification) values(" + userID + ",'" + facultyID + "','" + facultyDept + "','" + designation + "','" + facultyQualification + "')", con);
+
+        //            cmd.ExecuteNonQuery();
+        //        }
+
+        //        // Evaluator Details
+        //        else if (role == "Evaluator")
+        //        {
+
+
+        //            cmd = new SqlCommand("INSERT INTO EvaluatorDetails(UserID,EvaluatorCode,Department,Specialization,Qualification,EvaluatorType) values(" + userID + ",'" + evaluatorCode + "','" + evaluatorDept + "','" + specialization + "','" + evaluatorQualification + "','" + evaluatorType + "')", con);
+
+        //            cmd.ExecuteNonQuery();
+        //        }
+
+
+        //    }
+
+
+
+        //    // Registration Session
+        //    HttpContext.Current.Session["RegistrationUserID"] = userID;
+        //    HttpContext.Current.Session["RegistrationRole"] = role;
+        //    HttpContext.Current.Session["RegistrationStatus"] = "Pending";
+
+        //    return userID;
+        //}
+
+
         // Insert Registration
         public int insert_registration(
             string nm, string eml, string mbl, string pwd, string role,
@@ -109,82 +184,32 @@ namespace Final_project.Business_Logic
 
             int userID;
 
-            using (SqlConnection con = getcon())
-            using (SqlTransaction trans = con.BeginTransaction())
+            con = getcon();
+
+            // Users Table
+            cmd = new SqlCommand("INSERT INTO Users(FullName,Email,Phone,PasswordHash,PasswordSalt,Role,ApprovalStatus,EmailVerified,IsActive) OUTPUT INSERTED.UserID values('" + nm + "','" + eml + "','" + mbl + "','" + hash + "','" + salt + "','" + role + "','Pending',0,0)", con);
+
+            userID = Convert.ToInt32(cmd.ExecuteScalar());
+
+            // Student Details
+            if (role == "Student")
             {
-                // Users Table
-                string query = "INSERT INTO Users " +
-                    "(FullName,Email,Phone,PasswordHash,PasswordSalt,Role,ApprovalStatus,EmailVerified,IsActive) " +
-                    "OUTPUT INSERTED.UserID VALUES('" +
-                    nm.Replace("'", "''") + "','" +
-                    eml.Replace("'", "''") + "','" +
-                    mbl.Replace("'", "''") + "','" +
-                    hash + "','" + salt + "','" +
-                    role + "','Pending',0,0)";
+                cmd = new SqlCommand("INSERT INTO StudentDetails(UserID,EnrollmentNumber,RollNumber,Department,Course,Semester,AdmissionYear) values(" + userID + ",'" + enrollment + "','" + rollno + "','" + studentDept + "','" + course + "'," + semester + "," + admissionYear + ")", con);
+                cmd.ExecuteNonQuery();
+            }
 
-                cmd = new SqlCommand(query, con, trans);
-                userID = Convert.ToInt32(cmd.ExecuteScalar());
+            // Faculty Details
+            else if (role == "Faculty")
+            {
+                cmd = new SqlCommand("INSERT INTO FacultyDetails(UserID,FacultyID,Department,Designation,Qualification) values(" + userID + ",'" + facultyID + "','" + facultyDept + "','" + designation + "','" + facultyQualification + "')", con);
+                cmd.ExecuteNonQuery();
+            }
 
-                // Student Details
-                if (role == "Student")
-                {
-                    //string query1 = "INSERT INTO StudentDetails " +
-                    //    "(UserID,EnrollmentNumber,RollNumber,Department,Course,Semester,AdmissionYear) VALUES(" +
-                    //    userID + ",'" +
-                    //    enrollment.Replace("'", "''") + "','" +
-                    //    rollno.Replace("'", "''") + "','" +
-                    //    studentDept.Replace("'", "''") + "','" +
-                    //    course.Replace("'", "''") + "'," +
-                    //    semester + "," + admissionYear + ")";
-
-                    //cmd = new SqlCommand(query1, con, trans);
-                    //cmd.ExecuteNonQuery();
-
-                    cmd = new SqlCommand("INSERT INTO StudentDetails(UserID,EnrollmentNumber,RollNumber,Department,Course,Semester,AdmissionYear) values(" + userID + ",'" + enrollment + "','" + rollno + "','" + studentDept + "','" + course + "'," + semester + "," + admissionYear + ")", con);
-
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Faculty Details
-                else if (role == "Faculty")
-                {
-                    //string query2 = "INSERT INTO FacultyDetails " +
-                    //    "(UserID,FacultyID,Department,Designation,Qualification) VALUES(" +
-                    //    userID + ",'" +
-                    //    facultyID.Replace("'", "''") + "','" +
-                    //    facultyDept.Replace("'", "''") + "','" +
-                    //    designation.Replace("'", "''") + "','" +
-                    //    facultyQualification.Replace("'", "''") + "')";
-
-                    //cmd = new SqlCommand(query2, con, trans);
-                    //cmd.ExecuteNonQuery();
-
-                    cmd = new SqlCommand("INSERT INTO FacultyDetails(UserID,FacultyID,Department,Designation,Qualification) values(" + userID + ",'" + facultyID + "','" + facultyDept + "','" + designation + "','" + facultyQualification + "')", con);
-
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Evaluator Details
-                else if (role == "Evaluator")
-                {
-                    //string query3 = "INSERT INTO EvaluatorDetails " +
-                    //    "(UserID,EvaluatorCode,Department,Specialization,Qualification,EvaluatorType) VALUES(" +
-                    //    userID + ",'" +
-                    //    evaluatorCode.Replace("'", "''") + "','" +
-                    //    evaluatorDept.Replace("'", "''") + "','" +
-                    //    specialization.Replace("'", "''") + "','" +
-                    //    evaluatorQualification.Replace("'", "''") + "','" +
-                    //    evaluatorType.Replace("'", "''") + "')";
-
-                    //cmd = new SqlCommand(query3, con, trans);
-                    //cmd.ExecuteNonQuery();
-
-                    cmd = new SqlCommand("INSERT INTO EvaluatorDetails(UserID,EvaluatorCode,Department,Specialization,Qualification,EvaluatorType) values(" + userID + ",'" + evaluatorCode + "','" + evaluatorDept + "','" + specialization + "','" + evaluatorQualification + "','" + evaluatorType + "')", con);
-
-                    cmd.ExecuteNonQuery();
-                }
-
-                // trans.Commit();
+            // Evaluator Details
+            else if (role == "Evaluator")
+            {
+                cmd = new SqlCommand("INSERT INTO EvaluatorDetails(UserID,EvaluatorCode,Department,Specialization,Qualification,EvaluatorType) values(" + userID + ",'" + evaluatorCode + "','" + evaluatorDept + "','" + specialization + "','" + evaluatorQualification + "','" + evaluatorType + "')", con);
+                cmd.ExecuteNonQuery();
             }
 
             // Registration Session
@@ -259,17 +284,7 @@ namespace Final_project.Business_Logic
             return ds;
         }
 
-        //// Update Registration Approval
-        //public void updateApproval(int userID, string status, int adminID, string reason)
-        //{
-        //    con = getcon();
 
-        //    string query = "UPDATE Users SET ApprovalStatus='" + status +"', IsActive=CASE WHEN '" + status +"'='Approved' AND EmailVerified=1 THEN 1 ELSE 0 END, " + "RejectionReason='" + reason.Replace("'", "''") + "', ReviewedAt=GETDATE(), ReviewedBy=" + adminID + ", UpdatedAt=GETDATE() WHERE UserID=" + userID + " AND Role<>'Admin'";
-
-        //    cmd = new SqlCommand(query, con);
-        //    cmd.ExecuteNonQuery();
-
-        //}
 
         // Update Registration Approval
         public void updateApproval(int userID, string status, int adminID, string reason)
@@ -312,17 +327,6 @@ namespace Final_project.Business_Logic
             return true;
         }
 
-        //// Insert Admin
-        //public void insert_admin(string nm, string email, string phone, string password)
-        //{
-        //    string salt;
-        //    string hash = GeneratePasswordHash(password, out salt);
 
-        //    con = getcon();
-
-        //    cmd = new SqlCommand("INSERT INTO Users(FullName,Email,Phone,PasswordHash,PasswordSalt,Role,ApprovalStatus,EmailVerified,IsActive) values('" + nm + "','" + email + "','" + phone + "','" + hash + "','" + salt + "','Admin','Approved',1,1)", con);
-
-        //    cmd.ExecuteNonQuery();
-        //}
     }
 }

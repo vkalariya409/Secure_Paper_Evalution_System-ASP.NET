@@ -11,7 +11,20 @@ namespace Final_project.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Url.AbsolutePath.ToLower().EndsWith("/admin/login.aspx") == false)
+            {
+                if (Session["AdminID"] == null || Session["AdminRole"] == null)
+                {
+                    Response.Redirect("login.aspx");
+                }
+                else if (Session["AdminRole"].ToString() != "Admin")
+                {
+                    Session.Clear();
+                    Session.Abandon();
 
+                    Response.Redirect("login.aspx");
+                }
+            }
         }
     }
 }

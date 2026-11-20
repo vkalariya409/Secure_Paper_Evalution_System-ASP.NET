@@ -1,5 +1,4 @@
-﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Final_project.admin.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Final_project.admin.login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -62,14 +61,12 @@
                                 <i class="bi bi-shield-check text-muted"></i>
                             </span>
 
-                            <%-- ASP.NET TextBox --%>
                             <asp:TextBox
                                 ID="txtAdminUsername"
                                 runat="server"
-                                CssClass="form-control border-start-0 py-2"
-                                placeholder="admin@securepaper.edu"
-                                Text=""
-                            </asp:TextBox>
+                                CssClass="form-control"
+                                placeholder="Enter Admin Email">
+</asp:TextBox>
                         </div>
                     </div>
 
@@ -83,8 +80,7 @@
                                 CssClass="form-label fw-semibold mb-0">
                             </asp:Label>
 
-                            <a href="#" class="small text-primary text-decoration-none fw-semibold">
-                                Security Protocol
+                            <a href="#" class="small text-primary text-decoration-none fw-semibold">Security Protocol
                             </a>
                         </div>
 
